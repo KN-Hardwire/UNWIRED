@@ -28,10 +28,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Execute Output Generation
+      - name: Run Altium Output Generation
         shell: cmd
         run: |
-          "C:\Program Files\Altium\AD26\X2.EXE" -RScriptingSystem:RunScript(ProjectName="${{ github.workspace }}\hardware\automation\Automation.PrjScr", ScriptName="GenerateOutputs.pas", ProcName="RunOutJob")
+          "C:\Program Files\Altium\AD26\X2.EXE" -RScriptingSystem:RunScript(ProjectName="${{ github.workspace }}\hardware\automation\Automation.PrjScr", ScriptName="${{ github.workspace }}\hardware\automation\GenerateOutputs.pas", ProcName="GenerateOutputs.RunOutJob")
+
 
       - name: Upload Manufacturing Artifacts
         uses: actions/upload-artifact@v4

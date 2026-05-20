@@ -1,8 +1,5 @@
 [Design]
 Version=1.0
+
 [Document1]
 DocumentPath=GenerateOutputs.pas
-[Configuration1]
-Name=Default
-[Project]
-MS-PL=True

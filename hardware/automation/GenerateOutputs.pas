@@ -1,3 +1,5 @@
+unit GenerateOutputs;
+
 procedure RunOutJob;
 var
     Project : IProject;
@@ -11,13 +13,12 @@ begin
     begin
         // If no project is focused, try to find the first one in the workspace
         if Workspace.DM_ProjectCount > 0 then
-            Project := Workspace.DM_Projects(0);
+            Project := Workspace.DM_Projects[0];
     end;
 
     if Project = nil then Exit;
 
     // Open the Default.OutJob file
-    // Assumes the file is named 'Default.OutJob' and is in the project directory
     Document := Client.OpenDocument('OUTPUTJOB', Project.DM_ProjectDirectory + '\Default.OutJob');
     
     if Document <> nil then
@@ -34,3 +35,5 @@ begin
         Client.CloseDocument(Document);
     end;
 end;
+
+end.
