@@ -7,29 +7,33 @@ on:
       - 'hardware/**'
 
 jobs:
-  generate-outputs:
-    name: Generate Manufacturing Files
-    # SECURITY: Only run this on PRs from the internal repository (not forks)
-    # to protect the self-hosted runner from malicious code execution.
+  pre-cleanup:
+    name: Initialize Workspace
     if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: [self-hosted, windows, altium]
-
     steps:
-      - name: Cleanup lingering Altium processes
+      - name: Terminate Altium Processes
         shell: cmd
         run: |
           taskkill /F /IM X2.EXE /T || exit 0
           taskkill /F /IM DXP.EXE /T || exit 0
 
-      - name: Checkout Code
+  generate-outputs:
+    name: Generate Manufacturing Files
+    needs: pre-cleanup
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, windows, altium]
+
+    steps:
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Run Altium Output Generation
+      - name: Execute Output Generation
         shell: cmd
         run: |
           "C:\Program Files\Altium\AD26\X2.EXE" -RScriptingSystem:RunScript(ProjectName="${{ github.workspace }}\hardware\automation\Automation.PrjScr", ScriptName="GenerateOutputs.pas", ProcName="RunOutJob")
 
-      - name: Upload Artifacts
+      - name: Upload Manufacturing Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: manufacturing-outputs
