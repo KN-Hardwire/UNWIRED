@@ -31,8 +31,12 @@ jobs:
       - name: Run Altium Output Generation
         shell: powershell
         run: |
-          $prjFile = Get-ChildItem -Path "${{ github.workspace }}\hardware" -Filter "*.PrjPcb" -Recurse | Select-Object -First 1 -ExpandProperty FullName
+          $prjFile = (Get-ChildItem -Path "${{ github.workspace }}\hardware" -Filter "*.PrjPcb" -Recurse | Select-Object -First 1).FullName
           $scriptFile = "${{ github.workspace }}\hardware\automation\GenerateOutputs.pas"
+          
+          # Replace any forward slashes with backslashes for Altium
+          $prjFile = $prjFile.Replace("/", "\")
+          $scriptFile = $scriptFile.Replace("/", "\")
           
           & "C:\Program Files\Altium\AD26\X2.EXE" "$prjFile" -R"ScriptingSystem:RunScript(ScriptName='$scriptFile', ProcName='RunOutJob')"
 

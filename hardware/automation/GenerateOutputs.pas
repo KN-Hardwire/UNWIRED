@@ -3,6 +3,7 @@ var
     Project : IProject;
     Document : IServerDocument;
     Workspace : IWorkspace;
+    OutJobPath : String;
 begin
     Workspace := GetWorkspace;
     Project := Workspace.DM_FocusedProject;
@@ -15,7 +16,10 @@ begin
 
     if Project = nil then Exit;
 
-    Document := Client.OpenDocument('OUTPUTJOB', Project.DM_ProjectDirectory + '\Default.OutJob');
+    // Use a robust path concatenation
+    OutJobPath := Project.DM_ProjectDirectory + '\Default.OutJob';
+
+    Document := Client.OpenDocument('OUTPUTJOB', OutJobPath);
     
     if Document <> nil then
     begin
