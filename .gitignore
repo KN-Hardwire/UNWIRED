@@ -1,0 +1,33 @@
+# Altium Designer
+History/
+Project Logs for */
+Project Outputs for */
+__Previews/
+*.PcbDoc.htm
+*.SchDoc.htm
+*.Constraint
+*.Txt
+*.Zip
+*.Annotation
+*.Logs
+*.Status
+*.Output
+*.Old
+*.Bak
+*.Local
+*.SchDoc.zip
+*.PcbDoc.zip
+*.PrjPcb.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# General
+*.log
+*.tmp
+node_modules/
+build/
+dist/
+bin/
+obj/
