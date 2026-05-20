@@ -1,19 +1,31 @@
 Option Explicit
 
-Dim Altium, ProjectPath, ScriptPath, Params, Shell, FSO, Workspace
+Dim Altium, ProjectPath, ScriptPath, Params, Shell, FSO, Workspace, ExePath
 Set Shell = CreateObject("WScript.Shell")
 Set FSO = CreateObject("Scripting.FileSystemObject")
 
+ExePath = "C:\Program Files\Altium\AD26\X2.EXE"
+
 If WScript.Arguments.Count < 2 Then
-    WScript.Echo "Error: Missing arguments."
+    WScript.Echo "Error: Missing arguments. Expected ProjectPath and ScriptPath."
     WScript.Quit 1
 End If
 
 ProjectPath = WScript.Arguments(0)
 ScriptPath = WScript.Arguments(1)
 
-If Not FSO.FileExists(ProjectPath) Or Not FSO.FileExists(ScriptPath) Then
-    WScript.Echo "Error: Files not found."
+If Not FSO.FileExists(ProjectPath) Then
+    WScript.Echo "Error: Project file not found at: " & ProjectPath
+    WScript.Quit 1
+End If
+
+If Not FSO.FileExists(ScriptPath) Then
+    WScript.Echo "Error: Script file not found at: " & ScriptPath
+    WScript.Quit 1
+End If
+
+If Not FSO.FileExists(ExePath) Then
+    WScript.Echo "Error: Altium executable not found at: " & ExePath
     WScript.Quit 1
 End If
 
@@ -22,7 +34,7 @@ Set Altium = GetObject(, "Altium.Application")
 
 If Altium Is Nothing Then
     WScript.Echo "Starting Altium Designer..."
-    Shell.Run """C:\Program Files\Altium\AD26\X2.EXE""", 1, False
+    Shell.Run """" & ExePath & """", 1, False
     
     Dim timeout, startTime
     timeout = 60
@@ -31,7 +43,7 @@ If Altium Is Nothing Then
         WScript.Sleep 2000
         Set Altium = GetObject(, "Altium.Application")
         If DateDiff("s", startTime, Now) > timeout Then
-            WScript.Echo "Error: Timeout."
+            WScript.Echo "Error: Timeout waiting for Altium to start."
             WScript.Quit 1
         End If
     Loop
