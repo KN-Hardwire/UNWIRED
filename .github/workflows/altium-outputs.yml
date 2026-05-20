@@ -29,10 +29,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Altium Output Generation
-        shell: cmd
+        shell: powershell
         run: |
-          "C:\Program Files\Altium\AD26\X2.EXE" -RScriptingSystem:RunScript(ProjectName="${{ github.workspace }}\hardware\automation\Automation.PrjScr", ScriptName="${{ github.workspace }}\hardware\automation\GenerateOutputs.pas", ProcName="GenerateOutputs.RunOutJob")
-
+          $prjFile = Get-ChildItem -Path "${{ github.workspace }}\hardware" -Filter "*.PrjPcb" -Recurse | Select-Object -First 1 -ExpandProperty FullName
+          $scriptFile = "${{ github.workspace }}\hardware\automation\GenerateOutputs.pas"
+          $vbsFile = "${{ github.workspace }}\hardware\automation\RunAltium.vbs"
+          
+          cscript //nologo "$vbsFile" "$prjFile" "$scriptFile"
 
       - name: Upload Manufacturing Artifacts
         uses: actions/upload-artifact@v4
