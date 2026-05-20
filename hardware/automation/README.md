@@ -1,32 +1,32 @@
-# Altium Automation Guide
+# Altium Automation: Team Guide
 
-This folder contains the necessary scripts and documentation to automate the generation of manufacturing files (Gerbers, BOM, PDFs) using GitHub Actions.
+This project uses an automated CI/CD pipeline to generate manufacturing files (Gerbers, BOM, PDFs) whenever a Pull Request is opened or updated.
 
-## Requirements
+## How to Use the Automation
 
-1.  **Self-Hosted Runner**: A Windows machine with Altium Designer installed and licensed.
-2.  **GitHub Runner Software**: Installed on that machine and labeled with `altium`.
-3.  **Output Job File**: Each project must contain an `.OutJob` file named `Default.OutJob`.
+To ensure the automation works for your PCB project, you must follow these requirements:
 
-## Setup Instructions
+### 1. The Output Job File
+The automation script specifically looks for an Output Job file to execute.
+*   **Filename:** Every Altium project (`.PrjPcb`) must contain an Output Job file named exactly `Default.OutJob`.
+*   **Configuration:** Ensure this file is configured with all required outputs (Fabrication Outputs, Assembly Outputs, and Documentation).
+*   **Location:** The file must be in the same directory as your `.PrjPcb` file.
 
-### 1. Prepare Altium
-Ensure that your project has a `Default.OutJob` file configured with all the outputs you want (Gerbers, NC Drill, BOM, etc.).
+### 2. Branching Workflow
+Automation is only triggered on Pull Requests.
+*   Work on your assigned hardware branch (e.g., `hw/microcontroller`, `hw/power_supply`).
+*   When you are ready for a review, open a **Pull Request** to the `main` branch.
 
-### 2. Set up the GitHub Runner
-1.  Go to **Settings > Actions > Runners** in this repository.
-2.  Follow the instructions to add a **New self-hosted runner** for **Windows**.
-3.  During setup, add the label `altium` to the runner.
-4.  Run the runner as a service so it's always available.
+### 3. Reviewing Automated Outputs
+Once a Pull Request is opened:
+1.  The GitHub Action will initialize and run Altium on our dedicated runner.
+2.  After 2-5 minutes, look at the **Actions** tab or the bottom of the PR for **Artifacts**.
+3.  Download the `manufacturing-outputs` ZIP file.
+4.  **Verify these files** in a Gerber viewer before marking your PR as ready for review.
 
-### 3. Scripts
-The GitHub Action uses the script in this folder to trigger Altium. 
+## Technical Details
+The underlying automation uses the files in this folder:
 - `Automation.PrjScr`: The Altium Script Project.
-- `GenerateOutputs.pas`: The DelphiScript that opens the active project and runs the `Default.OutJob`.
+- `GenerateOutputs.pas`: The script that automates the `Default.OutJob` execution.
 
-## Workflow Overview
-When a Pull Request is opened or updated, the GitHub Action will:
-1.  Initialize the self-hosted Windows runner.
-2.  Execute Altium Designer.
-3.  Run the `GenerateOutputs.pas` script.
-4.  Upload the resulting `ProjectOutputs/` folder as a ZIP artifact for review.
+*Note: If the automation fails, ensure your project compiles without errors and that the `Default.OutJob` is correctly named.*
