@@ -33,9 +33,8 @@ jobs:
         run: |
           $prjFile = Get-ChildItem -Path "${{ github.workspace }}\hardware" -Filter "*.PrjPcb" -Recurse | Select-Object -First 1 -ExpandProperty FullName
           $scriptFile = "${{ github.workspace }}\hardware\automation\GenerateOutputs.pas"
-          $vbsFile = "${{ github.workspace }}\hardware\automation\RunAltium.vbs"
           
-          cscript //nologo "$vbsFile" "$prjFile" "$scriptFile"
+          & "C:\Program Files\Altium\AD26\X2.EXE" "$prjFile" -R"ScriptingSystem:RunScript(ScriptName='$scriptFile', ProcName='RunOutJob')"
 
       - name: Upload Manufacturing Artifacts
         uses: actions/upload-artifact@v4

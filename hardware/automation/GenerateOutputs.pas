@@ -1,5 +1,3 @@
-unit GenerateOutputs;
-
 procedure RunOutJob;
 var
     Project : IProject;
@@ -12,7 +10,7 @@ begin
     if Project = nil then
     begin
         if Workspace.DM_ProjectCount > 0 then
-            Project := Workspace.DM_Projects[0];
+            Project := Workspace.DM_Projects(0);
     end;
 
     if Project = nil then Exit;
@@ -30,6 +28,6 @@ begin
         
         Client.CloseDocument(Document);
     end;
+    
+    Terminate;
 end;
-
-end.
