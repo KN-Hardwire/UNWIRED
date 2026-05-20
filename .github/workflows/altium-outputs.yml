@@ -9,7 +9,9 @@ on:
 jobs:
   generate-outputs:
     name: Generate Manufacturing Files
-    # This requires a self-hosted Windows runner with Altium Designer installed
+    # SECURITY: Only run this on PRs from the internal repository (not forks)
+    # to protect the self-hosted runner from malicious code execution.
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: [self-hosted, windows, altium]
 
     steps:
