@@ -1,0 +1,29 @@
+name: Altium Designer Automation
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'hardware/**'
+
+jobs:
+  generate-outputs:
+    name: Generate Manufacturing Files
+    # This requires a self-hosted Windows runner with Altium Designer installed
+    runs-on: [self-hosted, windows, altium]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Altium Output Generation
+        shell: cmd
+        run: |
+          "C:\Program Files\Altium\AD24\DXP.EXE" -RScriptingSystem:RunScript(ProjectName="${{ github.workspace }}\hardware\automation\Automation.PrjScr", ScriptName="GenerateOutputs.pas", ProcName="RunOutJob")
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: manufacturing-outputs
+          path: hardware/**/ProjectOutputs/
+          if-no-files-found: warn
