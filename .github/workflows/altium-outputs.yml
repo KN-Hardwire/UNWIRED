@@ -15,6 +15,12 @@ jobs:
     runs-on: [self-hosted, windows, altium]
 
     steps:
+      - name: Cleanup lingering Altium processes
+        shell: cmd
+        run: |
+          taskkill /F /IM X2.EXE /T || exit 0
+          taskkill /F /IM DXP.EXE /T || exit 0
+
       - name: Checkout Code
         uses: actions/checkout@v4
 

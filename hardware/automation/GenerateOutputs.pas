@@ -29,5 +29,8 @@ begin
         AddStringParameter('ObjectKind', 'OutputBatch');
         AddStringParameter('Action', 'Run');
         RunProcess('WorkSpaceManager:GenerateOutputs');
+        
+        // Release the file lock
+        Client.CloseDocument(Document);
     end;
 end;
