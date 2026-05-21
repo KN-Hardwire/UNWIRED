@@ -1,0 +1,25 @@
+name: Hardware Guard
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - "hardware/**"
+
+jobs:
+  verify-hardware:
+    name: Verify Hardware Integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+
+      - name: Run Hardware Guard Linter
+        run: |
+          python3 scripts/lint_hardware.py ${{ steps.changed-files.outputs.all_changed_files }}
