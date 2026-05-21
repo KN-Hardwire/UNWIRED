@@ -10,10 +10,13 @@ begin
     LogPath := 'C:\altium_automation_log.txt';
     AssignFile(LogFile, LogPath);
     Rewrite(LogFile);
-    WriteLn(LogFile, 'Script entry point reached at ' + DateTimeToStr(Now));
+    WriteLn(LogFile, 'Script entry point reached.');
 
     Workspace := GetWorkspace;
     
+    // Wait for project to load
+    Sleep(5000);
+
     Project := Workspace.DM_FocusedProject;
     if Project = nil then
     begin
@@ -21,21 +24,19 @@ begin
         if Workspace.DM_ProjectCount > 0 then
         begin
             Project := Workspace.DM_Projects(0);
-            WriteLn(LogFile, 'Using first project in workspace: ' + Project.DM_ProjectFileName);
+            WriteLn(LogFile, 'Found project in workspace: ' + Project.DM_ProjectFileName);
         end;
     end;
 
     if Project = nil then 
     begin
-        WriteLn(LogFile, 'Error: No project found in workspace. Ensure the .PrjPcb was opened.');
+        WriteLn(LogFile, 'Error: No project found.');
         CloseFile(LogFile);
         Exit;
     end;
 
-    WriteLn(LogFile, 'Using project: ' + Project.DM_ProjectFileName);
-
     OutJobPath := Project.DM_ProjectDirectory + '\Default.OutJob';
-    WriteLn(LogFile, 'Targeting OutJob: ' + OutJobPath);
+    WriteLn(LogFile, 'Opening OutJob: ' + OutJobPath);
 
     Document := Client.OpenDocument('OUTPUTJOB', OutJobPath);
     
@@ -49,15 +50,15 @@ begin
         AddStringParameter('Action', 'Run');
         RunProcess('WorkSpaceManager:GenerateOutputs');
         
-        WriteLn(LogFile, 'Generation process triggered.');
+        WriteLn(LogFile, 'Generation triggered.');
         Client.CloseDocument(Document);
     end
     else
     begin
-        WriteLn(LogFile, 'Error: Default.OutJob not found or could not be opened.');
+        WriteLn(LogFile, 'Error: Could not open OutJob.');
     end;
     
-    WriteLn(LogFile, 'Process complete. Terminating instance.');
+    WriteLn(LogFile, 'Done.');
     CloseFile(LogFile);
     Terminate;
 end;
