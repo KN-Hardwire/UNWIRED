@@ -7,13 +7,13 @@ var
     LogFile : TextFile;
     LogPath : String;
 begin
-    // Use a universally writable location for the log
-    LogPath := 'C:\Users\Public\altium_log.txt';
+    LogPath := 'C:\AltiumAutomation\altium_automation_log.txt';
     AssignFile(LogFile, LogPath);
     Rewrite(LogFile);
     WriteLn(LogFile, 'START');
 
     Workspace := GetWorkspace;
+    // Wait for project to fully load into the workspace
     Sleep(5000);
 
     Project := Workspace.DM_FocusedProject;
@@ -31,16 +31,13 @@ begin
     end;
 
     OutJobPath := Project.DM_ProjectDirectory + '\Default.OutJob';
-    WriteLn(LogFile, 'Opening: ' + OutJobPath);
     Document := Client.OpenDocument('OUTPUTJOB', OutJobPath);
     
     if Document <> nil then
     begin
         Client.ShowDocument(Document);
-        // Wait for the document to fully activate before running the command
         Sleep(2000); 
         
-        WriteLn(LogFile, 'Triggering OutputBatch...');
         ResetParameters;
         AddStringParameter('ObjectKind', 'OutputBatch');
         AddStringParameter('Action', 'Run');

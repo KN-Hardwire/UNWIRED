@@ -22,41 +22,45 @@ jobs:
           try {
             $hwDir = Join-Path "${{ github.workspace }}" "hardware"
             $prjFile = (Get-ChildItem -Path $hwDir -Filter "*.PrjPcb" -Recurse -ErrorAction Stop | Select-Object -First 1).FullName
-            $scriptFile = Join-Path $hwDir "automation\GenerateOutputs.pas"
+            $sourceScript = Join-Path $hwDir "automation\GenerateOutputs.pas"
             
-            $prjFile = $prjFile.Replace("/", "\")
-            $scriptFile = $scriptFile.Replace("/", "\")
+            # Prepare Short-Path Environment
+            $altDir = "C:\AltiumAutomation"
+            if (!(Test-Path $altDir)) { New-Item -ItemType Directory -Path $altDir }
             
-            $logPath = "C:\Users\Public\altium_log.txt"
+            $targetScript = Join-Path $altDir "GenerateOutputs.pas"
+            $logPath = Join-Path $altDir "altium_automation_log.txt"
+            
+            # Copy script to short path to avoid Altium parser bugs
+            Copy-Item -Path $sourceScript -Destination $targetScript -Force
             if (Test-Path $logPath) { Remove-Item $logPath }
 
-            # Use the verified standalone invocation
+            # Standardize project path for Altium
+            $prjFile = $prjFile.Replace("/", "\")
+
+            # Research-backed syntax for AD26
             $argList = @(
               "`"$prjFile`"",
-              "-R`"ScriptingSystem:RunScript(ScriptName='$scriptFile', ProcName='RunOutJob')`""
+              "-R`"ScriptingSystem:RunScript(ProjectName='$prjFile'|ProcName='$targetScript>RunOutJob')`""
             )
 
-            Write-Host "Starting Altium Designer..."
-            # Launch without -Wait because X2.EXE exits immediately
+            Write-Host "Triggering Altium Designer 26..."
             Start-Process -FilePath "C:\Program Files\Altium\AD26\X2.EXE" -ArgumentList $argList
 
-            Write-Host "Polling for completion signal in log file..."
-            $timeout = 300 # 5 minutes
+            Write-Host "Polling for completion signal..."
+            $timeout = 420 # 7 minutes
             $elapsed = 0
             while ($true) {
               if (Test-Path $logPath) {
-                $logContent = Get-Content $logPath
+                $logContent = Get-Content $logPath -ErrorAction SilentlyContinue
                 if ($logContent -match "FINISH" -or $logContent -match "ERROR") {
-                  Write-Host "Altium process signaled completion."
+                  Write-Host "Process finished."
                   break
                 }
               }
-              if ($elapsed -ge $timeout) {
-                Write-Host "Timeout reached waiting for Altium."
-                break
-              }
-              Start-Sleep -Seconds 5
-              $elapsed += 5
+              if ($elapsed -ge $timeout) { throw "Timeout waiting for Altium." }
+              Start-Sleep -Seconds 10
+              $elapsed += 10
             }
           }
           catch {
@@ -68,12 +72,8 @@ jobs:
         if: always()
         shell: powershell
         run: |
-          $logPath = "C:\Users\Public\altium_log.txt"
-          if (Test-Path $logPath) {
-            Get-Content $logPath
-          } else {
-            Write-Host "Log file not found. Altium failed to execute the script."
-          }
+          $logPath = "C:\AltiumAutomation\altium_automation_log.txt"
+          if (Test-Path $logPath) { Get-Content $logPath }
 
       - name: Debug - List Hardware Directory
         shell: powershell
