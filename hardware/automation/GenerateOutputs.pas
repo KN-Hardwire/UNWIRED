@@ -3,34 +3,33 @@ var
     Project : IProject;
     Document : IServerDocument;
     Workspace : IWorkspace;
+    OutJobPath : String;
 begin
     Workspace := GetWorkspace;
     Project := Workspace.DM_FocusedProject;
     
     if Project = nil then
     begin
-        // If no project is focused, try to find the first one in the workspace
         if Workspace.DM_ProjectCount > 0 then
             Project := Workspace.DM_Projects(0);
     end;
 
     if Project = nil then Exit;
 
-    // Open the Default.OutJob file
-    // Assumes the file is named 'Default.OutJob' and is in the project directory
-    Document := Client.OpenDocument('OUTPUTJOB', Project.DM_ProjectDirectory + '\Default.OutJob');
+    OutJobPath := Project.DM_ProjectDirectory + '\Default.OutJob';
+    Document := Client.OpenDocument('OUTPUTJOB', OutJobPath);
     
     if Document <> nil then
     begin
         Client.ShowDocument(Document);
         
-        // Trigger the generation process
         ResetParameters;
         AddStringParameter('ObjectKind', 'OutputBatch');
         AddStringParameter('Action', 'Run');
         RunProcess('WorkSpaceManager:GenerateOutputs');
         
-        // Release the file lock
         Client.CloseDocument(Document);
     end;
+    
+    Terminate;
 end;
