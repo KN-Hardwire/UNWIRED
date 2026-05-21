@@ -31,5 +31,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: manufacturing-outputs
-          path: hardware/**/ProjectOutputs/
+          path: |
+            hardware/**/Project Outputs for *
+            hardware/**/ProjectOutputs
+            hardware/**/Outputs
           if-no-files-found: warn

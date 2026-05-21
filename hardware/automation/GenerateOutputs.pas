@@ -16,6 +16,11 @@ begin
 
     if Project = nil then Exit;
 
+    // 1. Compile project to ensure all data is fresh
+    ResetParameters;
+    RunProcess('WorkSpaceManager:Compile');
+
+    // 2. Open and Run the Output Job
     OutJobPath := Project.DM_ProjectDirectory + '\Default.OutJob';
     Document := Client.OpenDocument('OUTPUTJOB', OutJobPath);
     
