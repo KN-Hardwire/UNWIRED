@@ -7,20 +7,8 @@ on:
       - 'hardware/**'
 
 jobs:
-  pre-cleanup:
-    name: Initialize Workspace
-    if: github.event.pull_request.head.repo.full_name == github.repository
-    runs-on: [self-hosted, windows, altium]
-    steps:
-      - name: Terminate Altium Processes
-        shell: cmd
-        run: |
-          taskkill /F /IM X2.EXE /T || exit 0
-          taskkill /F /IM DXP.EXE /T || exit 0
-
   generate-outputs:
     name: Generate Manufacturing Files
-    needs: pre-cleanup
     if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: [self-hosted, windows, altium]
 
@@ -34,15 +22,33 @@ jobs:
           $prjFile = (Get-ChildItem -Path "${{ github.workspace }}\hardware" -Filter "*.PrjPcb" -Recurse | Select-Object -First 1).FullName
           $scriptFile = "${{ github.workspace }}\hardware\automation\GenerateOutputs.pas"
           
-          # Replace any forward slashes with backslashes for Altium
           $prjFile = $prjFile.Replace("/", "\")
           $scriptFile = $scriptFile.Replace("/", "\")
           
+          # Verified '&' invocation for AD26
           & "C:\Program Files\Altium\AD26\X2.EXE" "$prjFile" -R"ScriptingSystem:RunScript(ScriptName='$scriptFile', ProcName='RunOutJob')"
+
+      - name: Display Automation Log
+        if: always()
+        shell: powershell
+        run: |
+          if (Test-Path "C:\altium_automation_log.txt") {
+            Get-Content "C:\altium_automation_log.txt"
+          } else {
+            Write-Host "Log file not found. Script likely did not start."
+          }
+
+      - name: Debug - List Hardware Directory
+        shell: powershell
+        run: |
+          Get-ChildItem -Path "${{ github.workspace }}\hardware" -Recurse | Select-Object FullName
 
       - name: Upload Manufacturing Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: manufacturing-outputs
-          path: hardware/**/ProjectOutputs/
+          path: |
+            hardware/**/Project Outputs for *
+            hardware/**/ProjectOutputs
+            hardware/**/Outputs
           if-no-files-found: warn
