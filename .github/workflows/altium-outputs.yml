@@ -25,8 +25,9 @@ jobs:
           $prjFile = $prjFile.Replace("/", "\")
           $scriptFile = $scriptFile.Replace("/", "\")
           
-          # Verified '&' invocation for AD26
-          & "C:\Program Files\Altium\AD26\X2.EXE" "$prjFile" -R"ScriptingSystem:RunScript(ScriptName='$scriptFile', ProcName='RunOutJob')"
+          # Force PowerShell to wait for Altium to finish before moving to the next step
+          $argList = "`"$prjFile`"", "-R`"ScriptingSystem:RunScript(ScriptName='$scriptFile', ProcName='RunOutJob')`""
+          Start-Process -FilePath "C:\Program Files\Altium\AD26\X2.EXE" -ArgumentList $argList -Wait
 
       - name: Display Automation Log
         if: always()
