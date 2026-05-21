@@ -38,10 +38,10 @@ jobs:
             # Standardize project path for Altium
             $prjFile = $prjFile.Replace("/", "\")
 
-            # Research-backed syntax for AD26
+            # Use the verified standalone invocation from the manual test
             $argList = @(
               "`"$prjFile`"",
-              "-R`"ScriptingSystem:RunScript(ProjectName='$prjFile'|ProcName='$targetScript>RunOutJob')`""
+              "-R`"ScriptingSystem:RunScript(ScriptName='$targetScript', ProcName='RunOutJob')`""
             )
 
             Write-Host "Triggering Altium Designer 26..."
