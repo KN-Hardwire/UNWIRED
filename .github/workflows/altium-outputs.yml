@@ -25,9 +25,36 @@ jobs:
           $prjFile = $prjFile.Replace("/", "\")
           $scriptFile = $scriptFile.Replace("/", "\")
           
-          # Force PowerShell to wait for Altium to finish before moving to the next step
-          $argList = "`"$prjFile`"", "-R`"ScriptingSystem:RunScript(ScriptName='$scriptFile', ProcName='RunOutJob')`""
-          Start-Process -FilePath "C:\Program Files\Altium\AD26\X2.EXE" -ArgumentList $argList -Wait
+          # Delete old log
+          if (Test-Path "C:\altium_automation_log.txt") { Remove-Item "C:\altium_automation_log.txt" }
+
+          # Create a 'dumb' batch file to bypass PowerShell quoting issues
+          $batContent = "@echo off`n"
+          $batContent += "`"C:\Program Files\Altium\AD26\X2.EXE`" `"$prjFile`" -R`"ScriptingSystem:RunScript(ScriptName='$scriptFile', ProcName='RunOutJob')`""
+          $batContent | Out-File -FilePath "${{ github.workspace }}\run_altium.bat" -Encoding ascii
+          
+          Write-Host "Triggering Altium via Batch file..."
+          Start-Process -FilePath "${{ github.workspace }}\run_altium.bat"
+
+          # Wait for the log to signal FINISH or ERROR
+          Write-Host "Waiting for Altium to finish (Timeout 5 mins)..."
+          $timeout = 300 # seconds
+          $elapsed = 0
+          while ($true) {
+              if (Test-Path "C:\altium_automation_log.txt") {
+                  $log = Get-Content "C:\altium_automation_log.txt"
+                  if ($log -match "FINISH|ERROR") {
+                      Write-Host "Altium process finished signaled in log."
+                      break
+                  }
+              }
+              if ($elapsed -ge $timeout) {
+                  Write-Host "Error: Timeout waiting for Altium."
+                  break
+              }
+              Start-Sleep -Seconds 5
+              $elapsed += 5
+          }
 
       - name: Display Automation Log
         if: always()
@@ -36,7 +63,7 @@ jobs:
           if (Test-Path "C:\altium_automation_log.txt") {
             Get-Content "C:\altium_automation_log.txt"
           } else {
-            Write-Host "Log file not found. Script likely did not start."
+            Write-Host "Log file not found. Altium failed to start."
           }
 
       - name: Debug - List Hardware Directory

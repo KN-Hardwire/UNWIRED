@@ -10,55 +10,46 @@ begin
     LogPath := 'C:\altium_automation_log.txt';
     AssignFile(LogFile, LogPath);
     Rewrite(LogFile);
-    WriteLn(LogFile, 'Script entry point reached.');
+    WriteLn(LogFile, 'START');
 
     Workspace := GetWorkspace;
     
-    // Wait for project to load
+    // Wait for workspace to register the project
     Sleep(5000);
 
     Project := Workspace.DM_FocusedProject;
     if Project = nil then
     begin
-        WriteLn(LogFile, 'No focused project. Checking project count...');
         if Workspace.DM_ProjectCount > 0 then
-        begin
             Project := Workspace.DM_Projects(0);
-            WriteLn(LogFile, 'Found project in workspace: ' + Project.DM_ProjectFileName);
-        end;
     end;
 
     if Project = nil then 
     begin
-        WriteLn(LogFile, 'Error: No project found.');
+        WriteLn(LogFile, 'ERROR: NO_PROJECT');
         CloseFile(LogFile);
         Exit;
     end;
 
     OutJobPath := Project.DM_ProjectDirectory + '\Default.OutJob';
-    WriteLn(LogFile, 'Opening OutJob: ' + OutJobPath);
-
     Document := Client.OpenDocument('OUTPUTJOB', OutJobPath);
     
     if Document <> nil then
     begin
-        WriteLn(LogFile, 'OutJob opened. Starting generation...');
         Client.ShowDocument(Document);
-        
         ResetParameters;
         AddStringParameter('ObjectKind', 'OutputBatch');
         AddStringParameter('Action', 'Run');
         RunProcess('WorkSpaceManager:GenerateOutputs');
-        
-        WriteLn(LogFile, 'Generation triggered.');
         Client.CloseDocument(Document);
+        WriteLn(LogFile, 'SUCCESS');
     end
     else
     begin
-        WriteLn(LogFile, 'Error: Could not open OutJob.');
+        WriteLn(LogFile, 'ERROR: NO_OUTJOB');
     end;
     
-    WriteLn(LogFile, 'Done.');
+    WriteLn(LogFile, 'FINISH');
     CloseFile(LogFile);
     Terminate;
 end;
