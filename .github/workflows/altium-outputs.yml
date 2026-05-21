@@ -19,51 +19,42 @@ jobs:
       - name: Run Altium Output Generation
         shell: powershell
         run: |
-          $prjFile = (Get-ChildItem -Path "${{ github.workspace }}\hardware" -Filter "*.PrjPcb" -Recurse | Select-Object -First 1).FullName
-          $scriptFile = "${{ github.workspace }}\hardware\automation\GenerateOutputs.pas"
-          
-          $prjFile = $prjFile.Replace("/", "\")
-          $scriptFile = $scriptFile.Replace("/", "\")
-          
-          # Delete old log
-          if (Test-Path "C:\altium_automation_log.txt") { Remove-Item "C:\altium_automation_log.txt" }
+          try {
+            $hwDir = Join-Path "${{ github.workspace }}" "hardware"
+            $prjFile = (Get-ChildItem -Path $hwDir -Filter "*.PrjPcb" -Recurse -ErrorAction Stop | Select-Object -First 1).FullName
+            $scriptPrj = Join-Path $hwDir "automation\Automation.PrjScr"
+            $scriptFile = Join-Path $hwDir "automation\GenerateOutputs.pas"
+            
+            Write-Host "Project: $prjFile"
+            Write-Host "Script Project: $scriptPrj"
+            
+            if (-not (Test-Path $prjFile)) { throw "Hardware project not found." }
+            if (-not (Test-Path $scriptPrj)) { throw "Script project not found." }
 
-          # Create a 'dumb' batch file to bypass PowerShell quoting issues
-          $batContent = "@echo off`n"
-          $batContent += "`"C:\Program Files\Altium\AD26\X2.EXE`" `"$prjFile`" -R`"ScriptingSystem:RunScript(ScriptName='$scriptFile', ProcName='RunOutJob')`""
-          $batContent | Out-File -FilePath "${{ github.workspace }}\run_altium.bat" -Encoding ascii
-          
-          Write-Host "Triggering Altium via Batch file..."
-          Start-Process -FilePath "${{ github.workspace }}\run_altium.bat"
+            # Create the exact command line arguments
+            $argList = @(
+              "`"$prjFile`"",
+              "-R`"ScriptingSystem:RunScript(ProjectName='$scriptPrj', ScriptName='$scriptFile', ProcName='RunOutJob')`""
+            )
 
-          # Wait for the log to signal FINISH or ERROR
-          Write-Host "Waiting for Altium to finish (Timeout 5 mins)..."
-          $timeout = 300 # seconds
-          $elapsed = 0
-          while ($true) {
-              if (Test-Path "C:\altium_automation_log.txt") {
-                  $log = Get-Content "C:\altium_automation_log.txt"
-                  if ($log -match "FINISH|ERROR") {
-                      Write-Host "Altium process finished signaled in log."
-                      break
-                  }
-              }
-              if ($elapsed -ge $timeout) {
-                  Write-Host "Error: Timeout waiting for Altium."
-                  break
-              }
-              Start-Sleep -Seconds 5
-              $elapsed += 5
+            Write-Host "Starting Altium Designer..."
+            Start-Process -FilePath "C:\Program Files\Altium\AD26\X2.EXE" -ArgumentList $argList -Wait -ErrorAction Stop
+            Write-Host "Altium Designer process exited."
+          }
+          catch {
+            Write-Error $_.Exception.Message
+            exit 1
           }
 
       - name: Display Automation Log
         if: always()
         shell: powershell
         run: |
-          if (Test-Path "C:\altium_automation_log.txt") {
-            Get-Content "C:\altium_automation_log.txt"
+          $logPath = Join-Path "${{ github.workspace }}" "automation_log.txt"
+          if (Test-Path $logPath) {
+            Get-Content $logPath
           } else {
-            Write-Host "Log file not found. Altium failed to start."
+            Write-Host "Log file not found. Altium may not have started the script."
           }
 
       - name: Debug - List Hardware Directory

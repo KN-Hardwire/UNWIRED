@@ -7,14 +7,12 @@ var
     LogFile : TextFile;
     LogPath : String;
 begin
-    LogPath := 'C:\altium_automation_log.txt';
+    LogPath := 'automation_log.txt';
     AssignFile(LogFile, LogPath);
     Rewrite(LogFile);
     WriteLn(LogFile, 'START');
 
     Workspace := GetWorkspace;
-    
-    // Wait for workspace to register the project
     Sleep(5000);
 
     Project := Workspace.DM_FocusedProject;
