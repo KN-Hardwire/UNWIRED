@@ -22,10 +22,16 @@ jobs:
           $prjFile = (Get-ChildItem -Path "${{ github.workspace }}\hardware" -Filter "*.PrjPcb" -Recurse | Select-Object -First 1).FullName
           $scriptFile = "${{ github.workspace }}\hardware\automation\GenerateOutputs.pas"
           
+          # Standardize paths
           $prjFile = $prjFile.Replace("/", "\")
           $scriptFile = $scriptFile.Replace("/", "\")
           
-          & "C:\Program Files\Altium\AD26\X2.EXE" "$prjFile" -R"ScriptingSystem:RunScript(ScriptName='$scriptFile', ProcName='RunOutJob')"
+          Write-Host "Project: $prjFile"
+          Write-Host "Script: $scriptFile"
+          
+          # Execute Altium. We use Start-Process to avoid shell parsing issues with colons/parentheses.
+          $argList = "`"$prjFile`"", "-R`"ScriptingSystem:RunScript(ScriptName='$scriptFile', ProcName='RunOutJob')`""
+          Start-Process -FilePath "C:\Program Files\Altium\AD26\X2.EXE" -ArgumentList $argList -Wait
 
       - name: Debug - List Hardware Directory
         shell: powershell
