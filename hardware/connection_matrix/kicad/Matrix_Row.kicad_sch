@@ -1,0 +1,11 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "d901ce49-eed1-4a1a-859e-66baf22ce9aa")
+	(paper "A1" portrait)
+	(title_block
+		(company "AGH")
+	)
+	(lib_symbols)
+)
