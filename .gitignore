@@ -19,6 +19,17 @@ __Previews/
 *.PcbDoc.zip
 *.PrjPcb.zip
 
+# KiCad
+*-backups/
+.history/
+_restore_backup_*/
+*.kicad_prl
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.lck
+*.bak
+fp-info-cache
+
 # OS files
 .DS_Store
 Thumbs.db
