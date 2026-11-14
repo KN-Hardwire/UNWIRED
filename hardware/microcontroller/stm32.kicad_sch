@@ -5998,6 +5998,18 @@
 		(uuid "71e154d7-f8f2-4661-a3a6-3cb0bde8ee94")
 	)
 	(rectangle
+		(start 152.4 165.862)
+		(end 177.038 197.866)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "7d1e1695-c3d2-42bc-bb2f-22c093313879")
+	)
+	(rectangle
 		(start 11.938 165.862)
 		(end 177.038 197.866)
 		(stroke
@@ -6138,6 +6150,18 @@
 			)
 		)
 		(uuid "cb7c8330-4e41-4286-86b7-b86c248f1444")
+	)
+	(text "as close as possible to \nthe MCP23S17 (expander)"
+		(exclude_from_sim no)
+		(at 164.084 195.072 0)
+		(effects
+			(font
+				(size 1.1 1.1)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "dd5fc0fe-ba95-43a9-8536-d074ced685f0")
 	)
 	(junction
 		(at 208.28 102.87)
@@ -6941,6 +6965,16 @@
 	)
 	(wire
 		(pts
+			(xy 163.83 173.99) (xy 163.83 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b7aa089-053c-40d6-8736-04edd1bc72a1")
+	)
+	(wire
+		(pts
 			(xy 170.18 93.98) (xy 172.72 93.98)
 		)
 		(stroke
@@ -7448,6 +7482,16 @@
 			(type default)
 		)
 		(uuid "71594ea9-aa5f-445c-9812-79d06d95631e")
+	)
+	(wire
+		(pts
+			(xy 163.83 185.42) (xy 163.83 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71672386-67a6-47b3-81e9-f31b92c288ca")
 	)
 	(wire
 		(pts
@@ -9843,6 +9887,85 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 163.83 189.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0795c97f-461f-4fb9-9fb7-5c90c158f04e")
+		(property "Reference" "#PWR035"
+			(at 163.83 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 163.83 194.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 163.83 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 163.83 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 163.83 189.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0ce5a6a4-4cba-4544-aed7-c376531830f6")
+		)
+		(instances
+			(project "unwired"
+				(path "/2dc7e809-ba62-4de4-b040-f7d35a4b8d52/689567d8-0864-4909-ab82-8e21d60899c2"
+					(reference "#PWR035")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:FerriteBead")
 		(at 62.23 101.6 270)
 		(unit 1)
@@ -10297,7 +10420,7 @@
 		(dnp no)
 		(uuid "15f3f643-b626-4637-81d8-94b6e32be4cc")
 		(property "Reference" "C12"
-			(at 146.558 182.88 0)
+			(at 146.304 181.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10308,7 +10431,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 146.558 185.42 0)
+			(at 146.304 184.15 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10361,6 +10484,84 @@
 			(project "unwired"
 				(path "/2dc7e809-ba62-4de4-b040-f7d35a4b8d52/689567d8-0864-4909-ab82-8e21d60899c2"
 					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 163.83 173.99 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "16aa51af-6b22-47eb-a25f-0f5f69a2e749")
+		(property "Reference" "#PWR033"
+			(at 163.83 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 163.83 168.91 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 163.83 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 163.83 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 163.83 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dda4d007-f141-44ba-90b2-5c4cf9c13d72")
+		)
+		(instances
+			(project "unwired"
+				(path "/2dc7e809-ba62-4de4-b040-f7d35a4b8d52/689567d8-0864-4909-ab82-8e21d60899c2"
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -12702,6 +12903,87 @@
 			(project "unwired"
 				(path "/2dc7e809-ba62-4de4-b040-f7d35a4b8d52/689567d8-0864-4909-ab82-8e21d60899c2"
 					(reference "#FLG02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 163.83 181.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "59cb6b3e-e8cd-4548-ac28-7d0a39e11692")
+		(property "Reference" "C15"
+			(at 168.402 181.102 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 167.64 182.8799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 164.7952 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 163.83 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 163.83 181.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "517fba10-66aa-4b61-a85c-b538ad5d41e4")
+		)
+		(pin "2"
+			(uuid "72585c9f-a450-4376-a0a7-c22c96c37bdd")
+		)
+		(instances
+			(project "unwired"
+				(path "/2dc7e809-ba62-4de4-b040-f7d35a4b8d52/689567d8-0864-4909-ab82-8e21d60899c2"
+					(reference "C15")
 					(unit 1)
 				)
 			)
