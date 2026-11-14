@@ -130,10 +130,6 @@
 		(uuid "afc7d508-a271-468f-8c25-2295f70d83cf")
 	)
 	(no_connect
-		(at 80.01 97.79)
-		(uuid "b3440a13-1f30-44b2-8509-05358d411eef")
-	)
-	(no_connect
 		(at 80.01 74.93)
 		(uuid "b34fc53d-0f4f-4e61-8119-4b66b9544549")
 	)
@@ -288,16 +284,6 @@
 		(pin "PB1" input
 			(at 80.01 95.25 180)
 			(uuid "2f3452f7-06b0-4c7f-a598-c929f8d0af85")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "PB2" input
-			(at 80.01 97.79 180)
-			(uuid "27f5bfa0-16e5-4ee6-bd9f-5da7ab4c5ccb")
 			(effects
 				(font
 					(size 1.27 1.27)
