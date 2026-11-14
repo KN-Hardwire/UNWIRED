@@ -1,7 +1,7 @@
-#include "utils.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 int main(void) {
-	PRINT_DBG("UNWIRED: running main\n");
+	printf("UNWIRED: running main\n");
 	return EXIT_SUCCESS;
 }
