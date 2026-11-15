@@ -19,7 +19,6 @@ jobs:
   erc:
     name: ERC (errors + warnings)
     runs-on: ubuntu-latest
-    container: kicad/kicad:8.0
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -47,7 +46,8 @@ jobs:
           for sch in ${ROOTS:-}; do
             echo "ERC: $sch"
             out="erc-$(echo "$sch" | tr '/' '-').json"
-            kicad-cli sch erc --severity-all --exit-code-violations --format json --output "$out" "$sch" || status=1
+            docker run --rm -v "$PWD:/work" -w /work kicad/kicad:10.0 \
+              kicad-cli sch erc --severity-all --exit-code-violations --format json --output "$out" "$sch" || status=1
           done
           exit $status
 
@@ -62,7 +62,6 @@ jobs:
   drc:
     name: DRC (errors only)
     runs-on: ubuntu-latest
-    container: kicad/kicad:8.0
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -75,7 +74,8 @@ jobs:
           while read -r pcb; do
             echo "DRC: $pcb"
             out="drc-$(echo "$pcb" | tr '/' '-').json"
-            kicad-cli pcb drc --severity-error --schematic-parity --exit-code-violations --format json --output "$out" "$pcb" || status=1
+            docker run --rm -v "$PWD:/work" -w /work kicad/kicad:10.0 \
+              kicad-cli pcb drc --severity-error --schematic-parity --exit-code-violations --format json --output "$out" "$pcb" || status=1
           done < <(find hardware modules -name '*.kicad_pcb')
           exit $status
 
