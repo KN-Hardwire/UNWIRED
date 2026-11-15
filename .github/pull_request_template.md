@@ -12,12 +12,12 @@ Closes # (issue number)
 ## Checklist
 
 ### 🛡️ Hardware Guard Requirements
-- [ ] **PDF Updated:** If you changed a `.SchDoc`, you MUST update the `schematic.pdf` in the same folder.
-- [ ] **PDF Updated:** If you changed a `.PcbDoc`, you MUST update the `pcb.pdf` in the same folder.
-- [ ] **No Absolute Paths:** Checked that no `C:\Users\...` paths are in the `.PrjPcb` file.
+- [ ] **PDF Updated:** If you changed a `.kicad_sch`, you MUST update the `schematic.pdf` in the same folder.
+- [ ] **PDF Updated:** If you changed a `.kicad_pcb`, you MUST update the `pcb.pdf` in the same folder.
+- [ ] **No Absolute Paths:** Checked that no absolute paths (e.g. `C:\Users\...` or `/home/...`) are in the `.kicad_pro` file.
 
 ### 📸 Visual Review (Library Changes)
-*If you modified or added a Footprint (`.PcbLib`) or Symbol (`.SchLib`), you must paste a screenshot of the change below:*
+*If you modified or added a Footprint (`.pretty`) or Symbol, you must paste a screenshot of the change below:*
 > [ PASTE CLIPBOARD IMAGE HERE ]
 
 ### General Review

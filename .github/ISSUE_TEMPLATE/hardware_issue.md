@@ -11,7 +11,7 @@ assignees: ''
 A clear and concise description of what the problem is or what needs to be changed.
 
 **Affected Files**
-Which files are involved? (e.g., `Sheet1.SchDoc`, `PCB1.PcbDoc`, `unwired_footprints.PcbLib`)
+Which files are involved? (e.g. `Sheet1.kicad_sch`, `PCB1.kicad_pcb`, footprints in `*.pretty`)
 
 **Component References**
 List any specific components by their designators (e.g., R12, U1, C5).
