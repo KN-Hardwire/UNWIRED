@@ -7,18 +7,15 @@
 	(title_block
 		(title "STM32F401CCU6")
 		(date "2026-11-14")
+		(company "KN HARDWIRE")
 	)
 	(lib_symbols)
 	(no_connect
-		(at 80.01 85.09)
+		(at 80.01 76.2)
 		(uuid "0107db6d-e5bf-4ba1-a161-4e33a1f1ac87")
 	)
 	(no_connect
-		(at 80.01 66.04)
-		(uuid "0a0238fc-eead-4e52-af34-89f1dc94084d")
-	)
-	(no_connect
-		(at 80.01 104.14)
+		(at 80.01 91.44)
 		(uuid "1339d72f-2a29-440e-bee1-f235f1e3e2e5")
 	)
 	(no_connect
@@ -34,15 +31,15 @@
 		(uuid "2509f5dd-4a0b-4f2a-a4c3-2ad88b8c69d1")
 	)
 	(no_connect
-		(at 80.01 116.84)
+		(at 80.01 104.14)
 		(uuid "3fce0013-c45e-49ad-8c18-9e221f4e7c40")
 	)
 	(no_connect
-		(at 80.01 114.3)
+		(at 80.01 101.6)
 		(uuid "4aa8412f-77f3-45a9-9c6c-38952dd3162e")
 	)
 	(no_connect
-		(at 80.01 119.38)
+		(at 80.01 106.68)
 		(uuid "4bc88173-7e6f-40d4-9656-2bf0143f54fd")
 	)
 	(no_connect
@@ -58,11 +55,11 @@
 		(uuid "59b06de3-130d-4b26-aeeb-e48a8619cfb5")
 	)
 	(no_connect
-		(at 80.01 124.46)
+		(at 80.01 116.84)
 		(uuid "621b6ab0-6d04-4c00-86a4-b3ea9158e77b")
 	)
 	(no_connect
-		(at 80.01 92.71)
+		(at 80.01 81.28)
 		(uuid "68abca56-9ad5-432a-87c0-101ef704581e")
 	)
 	(no_connect
@@ -70,31 +67,19 @@
 		(uuid "6d850897-3e0a-4445-9e15-ee16578a43e5")
 	)
 	(no_connect
-		(at 80.01 63.5)
-		(uuid "7327159f-791e-4749-8651-a3428ad9854e")
-	)
-	(no_connect
 		(at 80.01 60.96)
 		(uuid "775828e4-e65e-4021-bf95-3698aea75840")
 	)
 	(no_connect
-		(at 80.01 106.68)
+		(at 80.01 93.98)
 		(uuid "782e6216-1dda-4fe9-9775-d7c7132ee741")
 	)
 	(no_connect
-		(at 80.01 77.47)
+		(at 80.01 71.12)
 		(uuid "7852f4d2-bb0b-4d8f-9dac-5e2ad8164275")
 	)
 	(no_connect
-		(at 222.25 58.42)
-		(uuid "7861d99f-0fb7-4d57-a73e-e317805f2e15")
-	)
-	(no_connect
-		(at 222.25 60.96)
-		(uuid "7d962a89-264d-49e2-8117-7781995ae1bf")
-	)
-	(no_connect
-		(at 80.01 111.76)
+		(at 80.01 99.06)
 		(uuid "8820bd6e-2f88-4c3e-97f0-2216895153b4")
 	)
 	(no_connect
@@ -106,7 +91,7 @@
 		(uuid "937840df-8ce5-42d0-b9f0-28c25397f4f9")
 	)
 	(no_connect
-		(at 80.01 95.25)
+		(at 80.01 83.82)
 		(uuid "a4a9e3d2-097f-463d-8bc6-80129bf87866")
 	)
 	(no_connect
@@ -118,7 +103,7 @@
 		(uuid "a6a05513-ff0b-49f0-8c69-ea403d030890")
 	)
 	(no_connect
-		(at 80.01 109.22)
+		(at 80.01 96.52)
 		(uuid "a6f5ba7e-b060-4949-81b3-868d9b91fa7b")
 	)
 	(no_connect
@@ -130,7 +115,7 @@
 		(uuid "afc7d508-a271-468f-8c25-2295f70d83cf")
 	)
 	(no_connect
-		(at 80.01 74.93)
+		(at 80.01 68.58)
 		(uuid "b34fc53d-0f4f-4e61-8119-4b66b9544549")
 	)
 	(no_connect
@@ -142,7 +127,7 @@
 		(uuid "d13d1d21-9062-49ad-88a4-a8eecd5943a1")
 	)
 	(no_connect
-		(at 80.01 72.39)
+		(at 80.01 66.04)
 		(uuid "d86c3649-aa1f-45e0-8045-de2bd2d294ec")
 	)
 	(no_connect
@@ -211,28 +196,8 @@
 				(justify left)
 			)
 		)
-		(pin "PA2" input
-			(at 80.01 63.5 180)
-			(uuid "985b405a-09fc-422d-8f2b-ce78d969afca")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "PA3" input
-			(at 80.01 66.04 180)
-			(uuid "4cd3ce46-d8ee-4a44-b995-f3d335a49c6e")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "PA8" input
-			(at 80.01 72.39 180)
+			(at 80.01 66.04 180)
 			(uuid "8e2d8dd8-6b4b-4a3f-964e-daaa42287f99")
 			(effects
 				(font
@@ -242,7 +207,7 @@
 			)
 		)
 		(pin "PA9" input
-			(at 80.01 74.93 180)
+			(at 80.01 68.58 180)
 			(uuid "077d9794-3808-43e6-9317-3382258e88bf")
 			(effects
 				(font
@@ -252,7 +217,7 @@
 			)
 		)
 		(pin "PA10" input
-			(at 80.01 77.47 180)
+			(at 80.01 71.12 180)
 			(uuid "6cfb9921-21c4-42fd-b5c1-3cee813701ea")
 			(effects
 				(font
@@ -262,7 +227,7 @@
 			)
 		)
 		(pin "PC13" input
-			(at 80.01 85.09 180)
+			(at 80.01 76.2 180)
 			(uuid "38e7f0ba-bd31-45de-8f2f-1b98ae76f198")
 			(effects
 				(font
@@ -272,7 +237,7 @@
 			)
 		)
 		(pin "PB0" input
-			(at 80.01 92.71 180)
+			(at 80.01 81.28 180)
 			(uuid "27e03cd9-b033-4c80-be80-0dad65d3a4f7")
 			(effects
 				(font
@@ -282,7 +247,7 @@
 			)
 		)
 		(pin "PB1" input
-			(at 80.01 95.25 180)
+			(at 80.01 83.82 180)
 			(uuid "2f3452f7-06b0-4c7f-a598-c929f8d0af85")
 			(effects
 				(font
@@ -292,7 +257,7 @@
 			)
 		)
 		(pin "PB4" input
-			(at 80.01 104.14 180)
+			(at 80.01 91.44 180)
 			(uuid "0ce5aa67-c91d-4382-9605-1a4fd3053fe3")
 			(effects
 				(font
@@ -302,7 +267,7 @@
 			)
 		)
 		(pin "PB5" input
-			(at 80.01 106.68 180)
+			(at 80.01 93.98 180)
 			(uuid "425cdbb9-afc7-40e2-8fa0-43f9a5f66b70")
 			(effects
 				(font
@@ -312,7 +277,7 @@
 			)
 		)
 		(pin "PB6" input
-			(at 80.01 109.22 180)
+			(at 80.01 96.52 180)
 			(uuid "81cf5f9e-a003-44b1-9256-7407a1010390")
 			(effects
 				(font
@@ -322,7 +287,7 @@
 			)
 		)
 		(pin "PB7" input
-			(at 80.01 111.76 180)
+			(at 80.01 99.06 180)
 			(uuid "8f66eb8d-abcf-4de8-9b8c-cfaaffd624c7")
 			(effects
 				(font
@@ -332,7 +297,7 @@
 			)
 		)
 		(pin "PB8" input
-			(at 80.01 114.3 180)
+			(at 80.01 101.6 180)
 			(uuid "66c0f1ba-33a3-4b47-97ae-04ecd22561a4")
 			(effects
 				(font
@@ -342,7 +307,7 @@
 			)
 		)
 		(pin "PB9" input
-			(at 80.01 116.84 180)
+			(at 80.01 104.14 180)
 			(uuid "f1e3f8da-9a9c-44f0-816a-5a3aecf8ebdf")
 			(effects
 				(font
@@ -352,7 +317,7 @@
 			)
 		)
 		(pin "PB10" input
-			(at 80.01 119.38 180)
+			(at 80.01 106.68 180)
 			(uuid "561daf25-38a8-4619-9ad7-b035f5138481")
 			(effects
 				(font
@@ -362,33 +327,13 @@
 			)
 		)
 		(pin "PB14" input
-			(at 80.01 124.46 180)
+			(at 80.01 116.84 180)
 			(uuid "68b19912-1a39-4ac7-9fc7-2fd4c6e16e88")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
-			)
-		)
-		(pin "INTA" input
-			(at 222.25 58.42 0)
-			(uuid "3a2fbf6c-f249-4d88-8fbd-5ad64405b579")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "INTB" input
-			(at 222.25 60.96 0)
-			(uuid "74f86a42-0e19-49fe-8088-c87e57b2dfce")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 			)
 		)
 		(pin "GPA0" input
