@@ -21,7 +21,7 @@ Closes # (issue number)
 > [ PASTE CLIPBOARD IMAGE HERE ]
 
 ### General Review
-- [ ] **DRC/ERC Passed:** All Design Rule Checks and Electrical Rule Checks are green.
+- [ ] **DRC/ERC Passed:** CI jobs `KiCad ERC/DRC` are green (ERC: errors+warnings fail; DRC: errors fail).
 - [ ] **3D Models:** All new components have correct 3D footprints.
 - [ ] **BOM Updated:** Bill of Materials is updated and parts are available.
 
