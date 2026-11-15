@@ -19,6 +19,9 @@ __Previews/
 *.PcbDoc.zip
 *.PrjPcb.zip
 
+# Don't ignore CMakeLists.txt
+!CMakeLists.txt
+
 # OS files
 .DS_Store
 Thumbs.db
