@@ -3,11 +3,11 @@ import sys
 import re
 
 def lint_project_file(file_path):
-    """Checks for absolute paths in Altium .PrjPcb files."""
+    """Checks for absolute paths in KiCad .kicad_pro files (stored as JSON strings)."""
     errors = []
-    # Match Windows absolute paths (e.g., C:\ or D:\)
-    abs_path_pattern = re.compile(r"[a-zA-Z]:\\")
-    
+    # Match Windows absolute paths (C:\...) or Unix absolute paths inside quoted strings
+    abs_path_pattern = re.compile(r"[a-zA-Z]:\\|(?<=\")/[a-zA-Z_]")
+
     try:
         with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
             for line_num, line in enumerate(f, 1):
@@ -15,25 +15,24 @@ def lint_project_file(file_path):
                     errors.append(f"Line {line_num}: Absolute path detected -> {line.strip()}")
     except Exception as e:
         return [f"Error reading file: {str(e)}"]
-    
+
     return errors
 
 def check_pdf_requirements(changed_files):
     """Enforces PDF updates for schematic and PCB changes."""
     errors = []
-    
-    # Identify which PCB directories had changes
+
     for file in changed_files:
-        if file.endswith(".SchDoc"):
+        if file.endswith(".kicad_sch"):
             pdf_path = os.path.join(os.path.dirname(file), "schematic.pdf")
             if pdf_path not in changed_files:
                 errors.append(f"Missing documentation: {file} was modified, but {pdf_path} was not updated in this PR.")
-        
-        if file.endswith(".PcbDoc"):
+
+        if file.endswith(".kicad_pcb"):
             pdf_path = os.path.join(os.path.dirname(file), "pcb.pdf")
             if pdf_path not in changed_files:
                 errors.append(f"Missing documentation: {file} was modified, but {pdf_path} was not updated in this PR.")
-                
+
     return errors
 
 def main():
@@ -43,11 +42,11 @@ def main():
 
     print("--- Hardware Guard: Starting Verification ---")
 
-    # 1. Check for Absolute Paths in all .PrjPcb files in the repo
+    # 1. Check for Absolute Paths in all KiCad project files in the repo
     print("\n[1/2] Linting Project Files...")
     for root, dirs, files in os.walk("."):
         for file in files:
-            if file.endswith(".PrjPcb"):
+            if file.endswith(".kicad_pro"):
                 path = os.path.join(root, file)
                 print(f"Checking: {path}")
                 lint_errors = lint_project_file(path)
