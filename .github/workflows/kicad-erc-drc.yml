@@ -1,0 +1,85 @@
+name: KiCad ERC/DRC
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - "hardware/**/*.kicad_sch"
+      - "hardware/**/*.kicad_pcb"
+      - "hardware/**/*.kicad_pro"
+      - "hardware/Libraries/**"
+
+permissions:
+  contents: read
+
+jobs:
+  erc:
+    name: ERC (errors + warnings)
+    runs-on: ubuntu-latest
+    container: kicad/kicad:8.0
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Run once per project hierarchy: skip sheets referenced by another sheet
+      - name: Find root schematics
+        run: |
+          find hardware -name '*.kicad_sch' > /tmp/all_sheets.txt
+          refs=$(mktemp)
+          while read -r f; do
+            grep -oE '"[^"]+\.kicad_sch"' "$f" 2>/dev/null | tr -d '"' >> "$refs" || true
+          done < /tmp/all_sheets.txt
+          roots=$(mktemp)
+          while read -r f; do
+            base=$(basename "$f")
+            grep -qx "$base" "$refs" || echo "$f" >> "$roots"
+          done < /tmp/all_sheets.txt
+          echo "ROOTS=$(paste -sd' ' "$roots")" >> "$GITHUB_ENV"
+
+      # --severity-all: errors AND warnings fail the job; project exclusions are
+      # honored by default (no --severity-exclusions), so ignored items don't fail
+      - name: Run ERC
+        run: |
+          status=0
+          for sch in ${ROOTS:-}; do
+            echo "ERC: $sch"
+            out="erc-$(echo "$sch" | tr '/' '-').json"
+            kicad-cli sch erc --severity-all --exit-code-violations --format json --output "$out" "$sch" || status=1
+          done
+          exit $status
+
+      - name: Upload ERC reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: erc-reports
+          path: erc-*.json
+          if-no-files-found: ignore
+
+  drc:
+    name: DRC (errors only)
+    runs-on: ubuntu-latest
+    container: kicad/kicad:8.0
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # --severity-error: warnings are reported but don't fail; exclusions honored
+      # by default, so ignored violations don't fail. Parity issues count as errors.
+      - name: Run DRC
+        run: |
+          status=0
+          while read -r pcb; do
+            echo "DRC: $pcb"
+            out="drc-$(echo "$pcb" | tr '/' '-').json"
+            kicad-cli pcb drc --severity-error --schematic-parity --exit-code-violations --format json --output "$out" "$pcb" || status=1
+          done < <(find hardware -name '*.kicad_pcb')
+          exit $status
+
+      - name: Upload DRC reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: drc-reports
+          path: drc-*.json
+          if-no-files-found: ignore
