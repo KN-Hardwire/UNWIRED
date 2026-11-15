@@ -34,6 +34,11 @@ fp-info-cache
 .DS_Store
 Thumbs.db
 
+# KiCad lock/backup artifacts
+*.kicad_pro.bak
+*.lck
+*.kicad_prl
+
 # General
 *.log
 *.tmp

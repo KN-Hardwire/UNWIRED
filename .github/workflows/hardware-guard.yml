@@ -5,6 +5,9 @@ on:
     branches: [ main ]
     paths:
       - "hardware/**"
+      - "modules/**/*.kicad_sch"
+      - "modules/**/*.kicad_pcb"
+      - "modules/**/*.kicad_pro"
 
 jobs:
   verify-hardware:

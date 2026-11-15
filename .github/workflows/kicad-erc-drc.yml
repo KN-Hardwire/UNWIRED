@@ -8,6 +8,9 @@ on:
       - "hardware/**/*.kicad_pcb"
       - "hardware/**/*.kicad_pro"
       - "hardware/Libraries/**"
+      - "modules/**/*.kicad_sch"
+      - "modules/**/*.kicad_pcb"
+      - "modules/**/*.kicad_pro"
 
 permissions:
   contents: read
@@ -24,7 +27,7 @@ jobs:
       # Run once per project hierarchy: skip sheets referenced by another sheet
       - name: Find root schematics
         run: |
-          find hardware -name '*.kicad_sch' > /tmp/all_sheets.txt
+          find hardware modules -name '*.kicad_sch' > /tmp/all_sheets.txt
           refs=$(mktemp)
           while read -r f; do
             grep -oE '"[^"]+\.kicad_sch"' "$f" 2>/dev/null | tr -d '"' >> "$refs" || true
@@ -73,7 +76,7 @@ jobs:
             echo "DRC: $pcb"
             out="drc-$(echo "$pcb" | tr '/' '-').json"
             kicad-cli pcb drc --severity-error --schematic-parity --exit-code-violations --format json --output "$out" "$pcb" || status=1
-          done < <(find hardware -name '*.kicad_pcb')
+          done < <(find hardware modules -name '*.kicad_pcb')
           exit $status
 
       - name: Upload DRC reports
