@@ -39,3 +39,6 @@ build/
 dist/
 bin/
 obj/
+
+# Editor artifacts
+.history/
