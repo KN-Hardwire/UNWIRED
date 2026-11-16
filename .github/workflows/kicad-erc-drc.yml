@@ -23,6 +23,7 @@ jobs:
     outputs:
       sch: ${{ steps.files.outputs.sch }}
       pcb: ${{ steps.files.outputs.pcb }}
+      labels: ${{ toJson(github.event.pull_request.labels.*.name) }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -32,6 +33,10 @@ jobs:
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v44
+        with:
+          # per-push granularity: only files touched by the latest commits on
+          # the PR branch, so a schematic-only sync doesn't run DRC
+          since_last_remote_commit: true
 
       - name: Categorize
         id: files
@@ -131,7 +136,10 @@ jobs:
   drc:
     name: DRC (errors only)
     needs: changes
-    if: needs.changes.outputs.pcb != ''
+    # DRC runs when a .kicad_pcb changed in the latest push AND the PR is not
+    # labeled "schematic-only" (manual override for schematic-sync PRs).
+    # Label "hardware-full" is informative only; default behavior is full.
+    if: needs.changes.outputs.pcb != '' && !contains(needs.changes.outputs.labels, 'schematic-only')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
