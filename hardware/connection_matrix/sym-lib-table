@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "unwired_schematic") (type "KiCad") (uri "${KIPRJMOD}/unwired_schematic.kicad_sym") (options "") (descr ""))
+)
