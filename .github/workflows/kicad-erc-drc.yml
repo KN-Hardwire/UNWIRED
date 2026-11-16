@@ -34,9 +34,9 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v44
         with:
-          # per-push granularity: only files touched by the latest commits on
-          # the PR branch, so a schematic-only sync doesn't run DRC
-          since_last_remote_commit: true
+          # per-push granularity on PRs (a schematic-only sync doesn't run DRC);
+          # manual dispatch validates the whole PR state
+          since_last_remote_commit: ${{ github.event_name == 'pull_request' }}
 
       - name: Categorize
         id: files
