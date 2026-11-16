@@ -35,14 +35,22 @@ jobs:
         uses: tj-actions/changed-files@v44
         with:
           # per-push granularity on PRs (a schematic-only sync doesn't run DRC);
-          # manual dispatch validates the whole PR state
+          # for dispatch the Categorize step diffs against main instead
           since_last_remote_commit: ${{ github.event_name == 'pull_request' }}
+        if: github.event_name == 'pull_request'
 
       - name: Categorize
         id: files
         env:
-          CHANGED: ${{ steps.changed-files.outputs.all_changed_files }}
+          CHANGED_PR: ${{ steps.changed-files.outputs.all_changed_files }}
+          DISPATCH: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
+          if [ "$DISPATCH" = "true" ]; then
+            # manual run: validate the whole PR state
+            CHANGED=$(git diff --name-only origin/main...HEAD)
+          else
+            CHANGED="$CHANGED_PR"
+          fi
           sch=""; pcb=""
           for f in $CHANGED; do
             case "$f" in
