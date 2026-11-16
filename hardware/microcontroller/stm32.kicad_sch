@@ -8,6 +8,8 @@
 		(title "STM32F401CCU6")
 		(date "2026-11-14")
 		(company "KN HARDWIRE")
+		(comment 1 "ZOFIA STACHOŃ")
+		(comment 2 "Author:")
 	)
 	(lib_symbols
 		(symbol "Connector:USB_C_Receptacle_USB2.0_16P"
