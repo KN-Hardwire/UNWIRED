@@ -11,14 +11,18 @@ on:
       - "modules/**/*.kicad_sch"
       - "modules/**/*.kicad_pcb"
       - "modules/**/*.kicad_pro"
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  erc:
-    name: ERC (errors + warnings)
+  changes:
+    name: Detect changed design files
     runs-on: ubuntu-latest
+    outputs:
+      sch: ${{ steps.files.outputs.sch }}
+      pcb: ${{ steps.files.outputs.pcb }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -29,11 +33,35 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v44
 
+      - name: Categorize
+        id: files
+        env:
+          CHANGED: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          sch=""; pcb=""
+          for f in $CHANGED; do
+            case "$f" in
+              *.kicad_sch) sch="$sch $f" ;;
+              *.kicad_pcb) pcb="$pcb $f" ;;
+            esac
+          done
+          echo "sch=$sch" >> "$GITHUB_OUTPUT"
+          echo "pcb=$pcb" >> "$GITHUB_OUTPUT"
+
+  erc:
+    name: ERC (errors + warnings)
+    needs: changes
+    if: needs.changes.outputs.sch != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       # Run once per project hierarchy, only for sheets changed in this PR.
       # A changed subsheet resolves to the root sheet that references it.
       - name: Find changed root schematics
         env:
-          CHANGED: ${{ steps.changed-files.outputs.all_changed_files }}
+          CHANGED: ${{ needs.changes.outputs.sch }}
         run: |
           # map: referenced_name -> referencing sheet (subsheets live in the same dir)
           map=$(mktemp)
@@ -48,9 +76,7 @@ jobs:
           }
           roots=""
           for f in $CHANGED; do
-            case "$f" in
-              *.kicad_sch) roots="$roots $(resolve "$f")" ;;
-            esac
+            roots="$roots $(resolve "$f")"
           done
           echo "ROOTS=$(printf '%s\n' $roots | sort -u | tr '\n' ' ')" >> "$GITHUB_ENV"
 
@@ -104,29 +130,21 @@ jobs:
 
   drc:
     name: DRC (errors only)
+    needs: changes
+    if: needs.changes.outputs.pcb != ''
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v44
 
       # --severity-error: warnings are reported but don't fail; exclusions honored
       # by default, so ignored violations don't fail. Parity issues count as errors.
       - name: Run DRC
         env:
-          CHANGED: ${{ steps.changed-files.outputs.all_changed_files }}
+          CHANGED: ${{ needs.changes.outputs.pcb }}
         run: |
           status=0
           for pcb in $CHANGED; do
-            case "$pcb" in
-              *.kicad_pcb) ;;
-              *) continue ;;
-            esac
             echo "DRC: $pcb"
             out="drc-$(echo "$pcb" | tr '/' '-').json"
             docker run --rm -v "$PWD:/work" -w /work kicad/kicad:10.0 \
