@@ -113,7 +113,6 @@
 		)
 		(capping no)
 		(filling no)
-		(zone_defaults)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -478,7 +477,7 @@
 			)
 		)
 		(property ki_fp_filters "SG-* SOT*")
-		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/f3d9fd01-cb06-4ad8-b65c-49c81eb00b86")
+		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/c0403932-03f1-43d8-97b1-e31237fa0773")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
 		(units
@@ -745,7 +744,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(R52-Pad1)")
+			(net "/Sector2/DAT_BUF")
 			(pintype "output")
 			(uuid "d995c65f-9e7c-4b72-a581-07e614ca317d")
 		)
@@ -764,7 +763,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(R51-Pad1)")
+			(net "/Sector2/CLK_BUF")
 			(pintype "output")
 			(uuid "e877d993-91bc-46da-b7b0-6c92eadef4ca")
 		)
@@ -18159,7 +18158,7 @@
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(R34-Pad1)")
+			(net "/Sector1/DAT_BUF")
 			(pintype "passive")
 			(uuid "0c56fae1-2c28-413d-b694-171fd1983c77")
 		)
@@ -19637,7 +19636,7 @@
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(R33-Pad1)")
+			(net "/Sector1/CLK_BUF")
 			(pintype "passive")
 			(uuid "b0894bd4-73ae-4a5b-b729-f297212d9e94")
 		)
@@ -29765,7 +29764,7 @@
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(R52-Pad1)")
+			(net "/Sector2/DAT_BUF")
 			(pintype "passive")
 			(uuid "c5a59a8e-4453-422a-9bad-54a5b4e7551a")
 		)
@@ -33488,7 +33487,7 @@
 			)
 		)
 		(property ki_fp_filters "SG-* SOT*")
-		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/f3d9fd01-cb06-4ad8-b65c-49c81eb00b86")
+		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/c0403932-03f1-43d8-97b1-e31237fa0773")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
 		(units
@@ -33755,7 +33754,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(R34-Pad1)")
+			(net "/Sector1/DAT_BUF")
 			(pintype "output")
 			(uuid "79a06fcb-4d29-4c3a-b848-30240bcdf072")
 		)
@@ -33774,7 +33773,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(R33-Pad1)")
+			(net "/Sector1/CLK_BUF")
 			(pintype "output")
 			(uuid "d5c9d11d-ba4b-467a-979a-60c00fd16ff5")
 		)
@@ -35713,7 +35712,7 @@
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(R51-Pad1)")
+			(net "/Sector2/CLK_BUF")
 			(pintype "passive")
 			(uuid "67e55650-1d44-4e63-97a2-123868409696")
 		)
@@ -44949,7 +44948,7 @@
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(R70-Pad1)")
+			(net "/Sector3/DAT_BUF")
 			(pintype "passive")
 			(uuid "8d7f9f06-774f-4e4c-bb80-d32e5c674962")
 		)
@@ -75215,7 +75214,7 @@
 			(size 0.8 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(R69-Pad1)")
+			(net "/Sector3/CLK_BUF")
 			(pintype "passive")
 			(uuid "3d38ce97-d2ca-429b-aa06-a40bd5983283")
 		)
@@ -86046,7 +86045,7 @@
 			)
 		)
 		(property ki_fp_filters "SG-* SOT*")
-		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/f3d9fd01-cb06-4ad8-b65c-49c81eb00b86")
+		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/c0403932-03f1-43d8-97b1-e31237fa0773")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
 		(units
@@ -86313,7 +86312,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(R70-Pad1)")
+			(net "/Sector3/DAT_BUF")
 			(pintype "output")
 			(uuid "f136beaa-e3a6-494a-9d43-27eed69ebba8")
 		)
@@ -86332,7 +86331,7 @@
 			(size 1.325 0.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(R69-Pad1)")
+			(net "/Sector3/CLK_BUF")
 			(pintype "output")
 			(uuid "6cfcdb86-9acf-42c0-a748-72508b4338b5")
 		)
@@ -86832,7 +86831,7 @@
 			)
 		)
 		(property ki_fp_filters "SOIC*3.9x8.7mm*P1.27mm* DIP*W7.62mm* TSSOP*4.4x5mm*P0.65mm* SSOP*5.3x6.2mm*P0.65mm* MSOP*3x3mm*P0.5mm*")
-		(path "/eebe8fb1-faaa-4d62-bbdd-75a5acfbe7e0")
+		(path "/6eae87fa-3390-4a00-aef0-7d687d1d4f29")
 		(sheetname "/")
 		(sheetfile "Main_Matrix_Schematics.kicad_sch")
 		(units
@@ -88441,6 +88440,7 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
 				)
 			)
 		)
@@ -91411,7 +91411,7 @@
 		(at 157.48 154.94 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP551"
+		(property "Reference" "MP23"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -91468,6 +91468,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/7c7878fc-b144-4276-b0cc-aa66d65cb041")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -91520,7 +91526,7 @@
 		(at 91.44 185.42)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "GNDP13"
+		(property "Reference" "GNDP1"
 			(at 0 1.998 0)
 			(layer "B.SilkS")
 			(hide yes)
@@ -91577,6 +91583,12 @@
 		(path "/0e0d6a1c-ee7c-44ce-af3a-74e98a919b7c")
 		(sheetname "/")
 		(sheetfile "Main_Matrix_Schematics.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -91737,7 +91749,7 @@
 		(at 106.68 160.02 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP609"
+		(property "Reference" "MP33"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -91794,6 +91806,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/091f0a7c-46e4-4687-bddc-9d749ecf26b6")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -91846,7 +91864,7 @@
 		(at 248.92 195.58)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "+12P44"
+		(property "Reference" "+12P1"
 			(at 0 1.998 0)
 			(layer "B.SilkS")
 			(hide yes)
@@ -91903,6 +91921,12 @@
 		(path "/99d9d8cc-4f96-4b0c-896a-b59324bc8110")
 		(sheetname "/")
 		(sheetfile "Main_Matrix_Schematics.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -91955,7 +91979,7 @@
 		(at 40.64 190.5)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "-12P3"
+		(property "Reference" "-12P1"
 			(at 0 1.998 0)
 			(layer "B.SilkS")
 			(hide yes)
@@ -92012,6 +92036,12 @@
 		(path "/dd0296e4-aeb2-460a-ba6e-f9646e56ea81")
 		(sheetname "/")
 		(sheetfile "Main_Matrix_Schematics.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -92064,7 +92094,7 @@
 		(at 269.24 160.02 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP577"
+		(property "Reference" "MP1"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -92121,6 +92151,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/091f0a7c-46e4-4687-bddc-9d749ecf26b6")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -92281,7 +92317,7 @@
 		(at 132.08 160.02 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP604"
+		(property "Reference" "MP28"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -92338,6 +92374,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/cee14dcc-b561-4d2a-a156-20d7f66712e7")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -92555,6 +92597,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/4bae01b0-cbbd-4d27-b45e-01ec40e0bf70")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -92607,7 +92655,7 @@
 		(at 30.48 170.18 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP720"
+		(property "Reference" "MP48"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -92664,6 +92712,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/0346feda-7cc4-46b7-8706-ef5f1eb966d4")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -92824,7 +92878,7 @@
 		(at 116.84 292.1 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1327"
+		(property "Reference" "MP79"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -92881,6 +92935,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/4cd243b5-a4c8-4af4-94a0-d8cdcda16b93")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -92990,6 +93050,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/348c657d-c2ca-422f-9464-c684b96d1a3c")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -93042,7 +93108,7 @@
 		(at 243.84 124.46 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP246"
+		(property "Reference" "MP6"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -93099,6 +93165,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/4f9da0da-0695-4bcb-8ad0-c1827216e66a")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -93151,7 +93223,7 @@
 		(at 213.36 180.34 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP780"
+		(property "Reference" "MP12"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -93266,7 +93338,7 @@
 		(at 243.84 261.62 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1014"
+		(property "Reference" "MP54"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -93323,6 +93395,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/281144f3-3a6a-43f4-b15e-0a49022c448d")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -93375,7 +93453,7 @@
 		(at 81.28 149.86 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP518"
+		(property "Reference" "MP38"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -93432,6 +93510,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/4f9da0da-0695-4bcb-8ad0-c1827216e66a")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -93484,7 +93568,7 @@
 		(at 35.56 251.46 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP959"
+		(property "Reference" "MP95"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -93541,6 +93625,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/1844c809-0eb1-4c88-876a-fccab9d5793a")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -93593,7 +93683,7 @@
 		(at 198.12 281.94 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1215"
+		(property "Reference" "MP63"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -93650,6 +93740,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/1844c809-0eb1-4c88-876a-fccab9d5793a")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -93810,7 +93906,7 @@
 		(at 55.88 312.42 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1531"
+		(property "Reference" "MP91"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -94033,7 +94129,7 @@
 		(at 248.92 139.7 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP389"
+		(property "Reference" "MP5"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -94090,6 +94186,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/c62f1b71-4c05-4265-be74-e4192e710b4e")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -94142,7 +94244,7 @@
 		(at 208.28 144.78 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP445"
+		(property "Reference" "MP13"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -94199,6 +94301,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/5a92341a-10ef-4874-9794-bc74ee18c3ac")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -94251,7 +94359,7 @@
 		(at 76.2 134.62 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP375"
+		(property "Reference" "MP39"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -94308,6 +94416,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/7bf6c945-411e-4513-8f2c-755bb427a78e")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -94360,7 +94474,7 @@
 		(at 50.8 165.1 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP668"
+		(property "Reference" "MP44"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -94417,6 +94531,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/50ae063c-bd94-48f8-8564-4aa49df96060")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -94469,7 +94589,7 @@
 		(at 50.8 246.38 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP908"
+		(property "Reference" "MP92"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -94526,6 +94646,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/cee14dcc-b561-4d2a-a156-20d7f66712e7")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -94578,7 +94704,7 @@
 		(at 152.4 281.94 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1224"
+		(property "Reference" "MP72"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -94635,6 +94761,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/6a932791-69b5-4686-bb8b-22739ca64f36")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -95238,7 +95370,7 @@
 		(at 111.76 200.66)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "+5P17"
+		(property "Reference" "+5P1"
 			(at 0 1.998 0)
 			(layer "B.SilkS")
 			(hide yes)
@@ -95295,6 +95427,12 @@
 		(path "/ab439039-80ca-4f63-9c17-4a969e728739")
 		(sheetname "/")
 		(sheetfile "Main_Matrix_Schematics.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -95347,7 +95485,7 @@
 		(at 259.08 149.86 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP483"
+		(property "Reference" "MP3"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -95404,6 +95542,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/09c87a6a-c8c0-407f-8e99-dc0bbfe729d8")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -95456,7 +95600,7 @@
 		(at 162.56 297.18 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1366"
+		(property "Reference" "MP70"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -95513,6 +95657,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/4f9da0da-0695-4bcb-8ad0-c1827216e66a")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -95565,7 +95715,7 @@
 		(at 121.92 124.46 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP270"
+		(property "Reference" "MP30"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -95622,6 +95772,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/3ebada94-5f05-404e-b5d4-d28bc4b1a3f4")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -95674,7 +95830,7 @@
 		(at 147.32 241.3 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP841"
+		(property "Reference" "MP73"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -95731,6 +95887,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/a12c8b1b-07da-46a6-af23-d71af090f20e")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -95892,7 +96054,7 @@
 		(at 96.52 165.1 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP659"
+		(property "Reference" "MP35"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -95949,6 +96111,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/09c87a6a-c8c0-407f-8e99-dc0bbfe729d8")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -96545,7 +96713,7 @@
 		(at 223.52 144.78 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP442"
+		(property "Reference" "MP10"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -96602,6 +96770,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/63f646b0-4397-4178-b8ec-dacbc2d6bdba")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -96711,6 +96885,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/4bae01b0-cbbd-4d27-b45e-01ec40e0bf70")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -96872,7 +97052,7 @@
 		(at 248.92 271.78 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1109"
+		(property "Reference" "MP53"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -96929,6 +97109,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/84247081-bddb-4e3f-8e0c-b9dec5a1c457")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -96981,7 +97167,7 @@
 		(at 45.72 129.54 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP333"
+		(property "Reference" "MP45"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -97038,6 +97224,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/5a92341a-10ef-4874-9794-bc74ee18c3ac")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -97090,7 +97282,7 @@
 		(at 40.64 256.54 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1006"
+		(property "Reference" "MP94"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -97147,6 +97339,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/3ebada94-5f05-404e-b5d4-d28bc4b1a3f4")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -97308,7 +97506,7 @@
 		(at 66.04 241.3 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP857"
+		(property "Reference" "MP89"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -97365,6 +97563,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/4bae01b0-cbbd-4d27-b45e-01ec40e0bf70")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -97417,7 +97621,7 @@
 		(at 157.48 271.78 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1127"
+		(property "Reference" "MP71"
 			(at -2.54 0.558 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -97474,6 +97678,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/7bf6c945-411e-4513-8f2c-755bb427a78e")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -97744,7 +97954,7 @@
 		(at 127 292.1 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1325"
+		(property "Reference" "MP77"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -97801,6 +98011,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/5a92341a-10ef-4874-9794-bc74ee18c3ac")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -97853,7 +98069,7 @@
 		(at 55.88 180.34 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP811"
+		(property "Reference" "MP43"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -97968,7 +98184,7 @@
 		(at 177.8 144.78 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP451"
+		(property "Reference" "MP19"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -98025,6 +98241,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/d161ed9c-c905-4e9b-b887-8118f5d00da8")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -98134,6 +98356,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/bf4607e8-2d38-4e81-8222-1e1a71ec09fd")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -98301,7 +98529,7 @@
 		(at 167.64 154.94 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP549"
+		(property "Reference" "MP21"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -98358,6 +98586,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/84247081-bddb-4e3f-8e0c-b9dec5a1c457")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -98518,7 +98752,7 @@
 		(at 111.76 261.62 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1040"
+		(property "Reference" "MP80"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -98575,6 +98809,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/0346feda-7cc4-46b7-8706-ef5f1eb966d4")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -98627,7 +98867,7 @@
 		(at 91.44 160.02 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP612"
+		(property "Reference" "MP36"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -98684,6 +98924,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/1c010b67-c696-424f-a3f3-9dbcd1dcac4d")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -98844,7 +99090,7 @@
 		(at 198.12 165.1 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP639"
+		(property "Reference" "MP15"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -98901,6 +99147,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/4cd243b5-a4c8-4af4-94a0-d8cdcda16b93")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -98953,7 +99205,7 @@
 		(at 96.52 276.86 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1187"
+		(property "Reference" "MP83"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -99010,6 +99262,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/d161ed9c-c905-4e9b-b887-8118f5d00da8")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -99171,7 +99429,7 @@
 		(at 172.72 266.7 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1076"
+		(property "Reference" "MP68"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -99228,6 +99486,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/1c010b67-c696-424f-a3f3-9dbcd1dcac4d")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -99498,7 +99762,7 @@
 		(at 132.08 292.1 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1324"
+		(property "Reference" "MP76"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -99555,6 +99819,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/50ae063c-bd94-48f8-8564-4aa49df96060")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -99607,7 +99877,7 @@
 		(at 71.12 154.94 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP568"
+		(property "Reference" "MP40"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -99664,6 +99934,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/6a932791-69b5-4686-bb8b-22739ca64f36")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -99716,7 +99992,7 @@
 		(at 86.36 139.7 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP421"
+		(property "Reference" "MP37"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -99773,6 +100049,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/c62f1b71-4c05-4265-be74-e4192e710b4e")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -99825,7 +100107,7 @@
 		(at 264.16 271.78 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1106"
+		(property "Reference" "MP50"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -99882,6 +100164,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/8c762bd0-3ad4-432f-80c9-b2cb8570be41")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -100152,7 +100440,7 @@
 		(at 66.04 165.1 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP665"
+		(property "Reference" "MP41"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -100209,6 +100497,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/a12c8b1b-07da-46a6-af23-d71af090f20e")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -100369,7 +100663,7 @@
 		(at 182.88 114.3 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP162"
+		(property "Reference" "MP18"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -100426,6 +100720,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/8c762bd0-3ad4-432f-80c9-b2cb8570be41")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -100478,7 +100778,7 @@
 		(at 111.76 114.3 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP176"
+		(property "Reference" "MP32"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -100535,6 +100835,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/0d417a7f-2c9e-4149-8e4d-b683dc51c06a")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -100587,7 +100893,7 @@
 		(at 218.44 261.62 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1019"
+		(property "Reference" "MP59"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -100644,6 +100950,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/65e4b1fe-e4b2-4728-ae1f-dd2e20cd78f4")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -101029,7 +101341,7 @@
 		(at 91.44 312.42 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1524"
+		(property "Reference" "MP84"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -102123,7 +102435,7 @@
 		(at 238.76 144.78 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP439"
+		(property "Reference" "MP7"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -102180,6 +102492,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/7bf6c945-411e-4513-8f2c-755bb427a78e")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -102232,7 +102550,7 @@
 		(at 152.4 144.78 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP456"
+		(property "Reference" "MP24"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -102289,6 +102607,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/bf4607e8-2d38-4e81-8222-1e1a71ec09fd")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -102674,7 +102998,7 @@
 		(at 187.96 312.42 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1505"
+		(property "Reference" "MP65"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -102789,7 +103113,7 @@
 		(at 264.16 154.94 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP530"
+		(property "Reference" "MP2"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -102846,6 +103170,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/b483f3eb-8f63-48a1-bfae-ab5f6cc2e884")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -103116,7 +103446,7 @@
 		(at 172.72 149.86 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP500"
+		(property "Reference" "MP20"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -103173,6 +103503,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/4b05757f-c891-4447-826d-27db6eb771d0")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -103225,7 +103561,7 @@
 		(at 218.44 114.3 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP155"
+		(property "Reference" "MP11"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -103282,6 +103618,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/8703fbeb-cdb3-4dd9-b9aa-30ba80d255b1")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -103660,7 +104002,7 @@
 		(at 167.64 256.54 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP981"
+		(property "Reference" "MP69"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -103717,6 +104059,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/c62f1b71-4c05-4265-be74-e4192e710b4e")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -103769,7 +104117,7 @@
 		(at 137.16 165.1 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP651"
+		(property "Reference" "MP27"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -103826,6 +104174,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/65e4b1fe-e4b2-4728-ae1f-dd2e20cd78f4")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -104754,7 +105108,7 @@
 		(at 30.48 312.42 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1536"
+		(property "Reference" "MP96"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -105092,7 +105446,7 @@
 		(at 269.24 297.18 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1345"
+		(property "Reference" "MP49"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -105149,6 +105503,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/914f2bca-d152-4bfa-9883-2688ca9a8519")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -105752,7 +106112,7 @@
 		(at 203.2 149.86 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP494"
+		(property "Reference" "MP14"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -105809,6 +106169,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/348c657d-c2ca-422f-9464-c684b96d1a3c")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -105861,7 +106227,7 @@
 		(at 238.76 261.62 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1015"
+		(property "Reference" "MP55"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -105918,6 +106284,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/7c7878fc-b144-4276-b0cc-aa66d65cb041")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -105970,7 +106342,7 @@
 		(at 76.2 246.38 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP903"
+		(property "Reference" "MP87"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -106027,6 +106399,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/7c7878fc-b144-4276-b0cc-aa66d65cb041")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -106079,7 +106457,7 @@
 		(at 142.24 149.86 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP506"
+		(property "Reference" "MP26"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -106136,6 +106514,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/ff843cb6-6e34-4891-af4a-621e31700a6e")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -106303,7 +106687,7 @@
 		(at 233.68 261.62 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1016"
+		(property "Reference" "MP56"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -106360,6 +106744,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/bf4607e8-2d38-4e81-8222-1e1a71ec09fd")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -106629,7 +107019,7 @@
 		(at 187.96 109.22 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP113"
+		(property "Reference" "MP17"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -106686,6 +107076,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/914f2bca-d152-4bfa-9883-2688ca9a8519")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -107174,7 +107570,7 @@
 		(at 208.28 266.7 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1069"
+		(property "Reference" "MP61"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -107231,6 +107627,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/3749e0a8-5df3-45de-97f8-11f347db8900")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -107501,7 +107903,7 @@
 		(at 162.56 149.86 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP502"
+		(property "Reference" "MP22"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -107558,6 +107960,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/281144f3-3a6a-43f4-b15e-0a49022c448d")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -108700,7 +109108,7 @@
 		(at 228.6 129.54 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP297"
+		(property "Reference" "MP9"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -108757,6 +109165,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/a12c8b1b-07da-46a6-af23-d71af090f20e")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -109468,7 +109882,7 @@
 		(at 233.68 149.86 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP488"
+		(property "Reference" "MP8"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -109525,6 +109939,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/6a932791-69b5-4686-bb8b-22739ca64f36")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -110338,7 +110758,7 @@
 		(at 116.84 154.94 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP559"
+		(property "Reference" "MP31"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -110395,6 +110815,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/1844c809-0eb1-4c88-876a-fccab9d5793a")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -110774,7 +111200,7 @@
 		(at 213.36 246.38 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP876"
+		(property "Reference" "MP60"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -110831,6 +111257,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/cee14dcc-b561-4d2a-a156-20d7f66712e7")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -112100,7 +112532,7 @@
 		(at 223.52 266.7 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1066"
+		(property "Reference" "MP58"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -112157,6 +112589,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/ff843cb6-6e34-4891-af4a-621e31700a6e")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -112645,7 +113083,7 @@
 		(at 193.04 246.38 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP880"
+		(property "Reference" "MP64"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -112702,6 +113140,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/0d417a7f-2c9e-4149-8e4d-b683dc51c06a")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -113515,7 +113959,7 @@
 		(at 142.24 246.38 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP890"
+		(property "Reference" "MP74"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -113572,6 +114016,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/63f646b0-4397-4178-b8ec-dacbc2d6bdba")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -115475,7 +115925,7 @@
 		(at 35.56 165.1 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP671"
+		(property "Reference" "MP47"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -115532,6 +115982,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/4cd243b5-a4c8-4af4-94a0-d8cdcda16b93")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -116898,7 +117354,7 @@
 		(at 106.68 246.38 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP897"
+		(property "Reference" "MP81"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -116955,6 +117411,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/914f2bca-d152-4bfa-9883-2688ca9a8519")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -121389,7 +121851,7 @@
 		(at 259.08 261.62 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1011"
+		(property "Reference" "MP51"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -121446,6 +121908,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/d161ed9c-c905-4e9b-b887-8118f5d00da8")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -121716,7 +122184,7 @@
 		(at 137.16 287.02 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1275"
+		(property "Reference" "MP75"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -121773,6 +122241,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/8703fbeb-cdb3-4dd9-b9aa-30ba80d255b1")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -123138,7 +123612,7 @@
 		(at 45.72 256.54 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1005"
+		(property "Reference" "MP93"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -123195,6 +123669,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/3749e0a8-5df3-45de-97f8-11f347db8900")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -126309,7 +126789,7 @@
 		(at 254 114.3 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP148"
+		(property "Reference" "MP4"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -126366,6 +126846,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/1c010b67-c696-424f-a3f3-9dbcd1dcac4d")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -126969,7 +127455,7 @@
 		(at 203.2 271.78 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1118"
+		(property "Reference" "MP62"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -127026,6 +127512,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/3ebada94-5f05-404e-b5d4-d28bc4b1a3f4")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -127411,7 +127903,7 @@
 		(at 193.04 170.18 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP688"
+		(property "Reference" "MP16"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -127468,6 +127960,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/0346feda-7cc4-46b7-8706-ef5f1eb966d4")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -127577,6 +128075,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/348c657d-c2ca-422f-9464-c684b96d1a3c")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -128500,7 +129004,7 @@
 		(at 254 302.26 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1396"
+		(property "Reference" "MP52"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -128557,6 +129061,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/4b05757f-c891-4447-826d-27db6eb771d0")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -129269,7 +129779,7 @@
 		(at 81.28 297.18 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1382"
+		(property "Reference" "MP86"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -129326,6 +129836,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/281144f3-3a6a-43f4-b15e-0a49022c448d")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -129814,7 +130330,7 @@
 		(at 86.36 241.3 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP853"
+		(property "Reference" "MP85"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -129871,6 +130387,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/84247081-bddb-4e3f-8e0c-b9dec5a1c457")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -131345,7 +131867,7 @@
 		(at 101.6 114.3 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP178"
+		(property "Reference" "MP34"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -131402,6 +131924,12 @@
 		(path "/6e408e95-17fc-4a55-a6fe-c6995ad680c7/b483f3eb-8f63-48a1-bfae-ab5f6cc2e884")
 		(sheetname "/Sector2/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -135406,7 +135934,7 @@
 		(at 60.96 251.46 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP954"
+		(property "Reference" "MP90"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -135463,6 +135991,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/ff843cb6-6e34-4891-af4a-621e31700a6e")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -136502,7 +137036,7 @@
 		(at 177.8 297.18 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP1363"
+		(property "Reference" "MP67"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -136559,6 +137093,12 @@
 		(path "/a4a8f227-7d1e-49ff-8126-9feda2abbd91/09c87a6a-c8c0-407f-8e99-dc0bbfe729d8")
 		(sheetname "/Sector3/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -141311,7 +141851,7 @@
 		(at 127 139.7 90)
 		(descr "SMD pad as test Point, diameter 2.0mm")
 		(tags "test point SMD pad")
-		(property "Reference" "MP413"
+		(property "Reference" "MP29"
 			(at 0 1.998 90)
 			(layer "B.SilkS")
 			(hide yes)
@@ -141368,6 +141908,12 @@
 		(path "/f174cda4-da0c-435f-a3d7-f2f428baaaab/3749e0a8-5df3-45de-97f8-11f347db8900")
 		(sheetname "/Sector1/")
 		(sheetfile "sector.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -302235,516 +302781,36 @@
 		(uuid "f7d89ca6-88fb-4ac8-b120-dfea3223d113")
 	)
 	(segment
-		(start 269.24 104.14)
-		(end 269.24 180.34)
+		(start 152.4 236.22)
+		(end 152.4 312.42)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector1/MP1_0")
-		(uuid "6526b094-ca85-413d-b99a-cc2d9f01df8d")
+		(net "/Sector3/MP1_7")
+		(uuid "d83c512b-0db1-40aa-a124-bb45e3ce0c4d")
 	)
 	(segment
-		(start 264.16 104.14)
-		(end 264.16 180.34)
+		(start 157.48 236.22)
+		(end 157.48 312.42)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector1/MP1_1")
-		(uuid "9c5d90c7-3099-4ea0-adbb-63eead4f7bb3")
+		(net "/Sector3/MP1_6")
+		(uuid "2dcd737d-94cc-44ad-8c2c-3104b58228fb")
 	)
 	(segment
-		(start 259.08 104.14)
-		(end 259.08 180.34)
+		(start 162.56 236.22)
+		(end 162.56 312.42)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector1/MP1_2")
-		(uuid "c9726fae-d70c-4c88-bf76-f1966bf6ef1c")
+		(net "/Sector3/MP1_5")
+		(uuid "ae77bcf6-b720-4b5f-9ae7-78849c334203")
 	)
 	(segment
-		(start 254 104.14)
-		(end 254 180.34)
+		(start 167.64 236.22)
+		(end 167.64 312.42)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector1/MP1_3")
-		(uuid "1217e44a-83e5-465d-b86f-c08d91df2f28")
-	)
-	(segment
-		(start 248.92 104.14)
-		(end 248.92 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP1_4")
-		(uuid "f16dbaee-9c76-4a5b-9773-46bafc2943e9")
-	)
-	(segment
-		(start 243.84 104.14)
-		(end 243.84 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP1_5")
-		(uuid "8ad80eb3-acf8-4d70-b272-1917764be69a")
-	)
-	(segment
-		(start 238.76 104.14)
-		(end 238.76 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP1_6")
-		(uuid "79fa90f8-8af3-48a4-9b87-d7cc80d618f2")
-	)
-	(segment
-		(start 233.68 104.14)
-		(end 233.68 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP1_7")
-		(uuid "ffdd230b-abcd-46b3-9c21-127de2d285ca")
-	)
-	(segment
-		(start 228.6 104.14)
-		(end 228.6 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP2_0")
-		(uuid "cee62e88-2451-475d-bb81-858815540042")
-	)
-	(segment
-		(start 223.52 104.14)
-		(end 223.52 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP2_1")
-		(uuid "b60c293a-a314-48f7-aa6b-36459c981acb")
-	)
-	(segment
-		(start 218.44 104.14)
-		(end 218.44 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP2_2")
-		(uuid "79c7e1e9-4f3d-40d7-a22d-00634b2929f3")
-	)
-	(segment
-		(start 213.36 104.14)
-		(end 213.36 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP2_3")
-		(uuid "a624c173-909b-40a3-b6a2-5caa00a4c85c")
-	)
-	(segment
-		(start 208.28 104.14)
-		(end 208.28 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP2_4")
-		(uuid "a3527341-d4ef-47e7-9341-5afc59ed4481")
-	)
-	(segment
-		(start 203.2 104.14)
-		(end 203.2 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP2_5")
-		(uuid "d7b086ae-ac51-4838-af3b-0e7955b7460f")
-	)
-	(segment
-		(start 198.12 104.14)
-		(end 198.12 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP2_6")
-		(uuid "221b6ad0-62ab-4476-8536-7b76cd6cfee0")
-	)
-	(segment
-		(start 193.04 104.14)
-		(end 193.04 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP2_7")
-		(uuid "68572dc1-3025-4f66-ade9-755258445fbf")
-	)
-	(segment
-		(start 187.96 104.14)
-		(end 187.96 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP3_0")
-		(uuid "8eaf6064-d4d4-4dd0-b4b0-b172b48d8e40")
-	)
-	(segment
-		(start 182.88 104.14)
-		(end 182.88 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP3_1")
-		(uuid "1689d7f9-b39b-4339-9d7f-297bab012faf")
-	)
-	(segment
-		(start 177.8 104.14)
-		(end 177.8 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP3_2")
-		(uuid "dafb43ab-0028-4b49-b3b3-949fe9bf2efa")
-	)
-	(segment
-		(start 172.72 104.14)
-		(end 172.72 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP3_3")
-		(uuid "e041d700-db1a-4432-b2b6-a952f48c790e")
-	)
-	(segment
-		(start 167.64 104.14)
-		(end 167.64 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP3_4")
-		(uuid "20adea11-da55-40e7-9e3f-0d63dfdac8c7")
-	)
-	(segment
-		(start 162.56 104.14)
-		(end 162.56 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP3_5")
-		(uuid "290a623c-bc0c-4073-b367-f5d68ce1970b")
-	)
-	(segment
-		(start 157.48 104.14)
-		(end 157.48 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP3_6")
-		(uuid "2484e6e0-2770-4750-8dbf-c527ba2bee9d")
-	)
-	(segment
-		(start 152.4 104.14)
-		(end 152.4 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP3_7")
-		(uuid "94e75ca9-4293-49ae-9972-959c9f1f932c")
-	)
-	(segment
-		(start 147.32 104.14)
-		(end 147.32 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP4_0")
-		(uuid "1eab12f6-d773-4b4e-9fd6-6caf7839ea23")
-	)
-	(segment
-		(start 142.24 104.14)
-		(end 142.24 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP4_1")
-		(uuid "018e4e69-229b-4529-a939-5a029f414702")
-	)
-	(segment
-		(start 137.16 104.14)
-		(end 137.16 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP4_2")
-		(uuid "91024684-713c-4b76-b066-68175af17b30")
-	)
-	(segment
-		(start 132.08 104.14)
-		(end 132.08 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP4_3")
-		(uuid "d1512d3b-e4ae-40d8-87f1-b24522af5e9d")
-	)
-	(segment
-		(start 127 104.14)
-		(end 127 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP4_4")
-		(uuid "ebea7a87-c1b6-4142-8977-d1c13f18c433")
-	)
-	(segment
-		(start 121.92 104.14)
-		(end 121.92 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP4_5")
-		(uuid "c5fb05ac-6cb6-4962-9e5d-0b7beeed5841")
-	)
-	(segment
-		(start 116.84 104.14)
-		(end 116.84 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP4_6")
-		(uuid "d3bc4567-cc5c-40dd-bce0-f12171d43777")
-	)
-	(segment
-		(start 111.76 104.14)
-		(end 111.76 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector1/MP4_7")
-		(uuid "1e1e48ef-0d3d-44f3-878e-5be1446a12e7")
-	)
-	(segment
-		(start 106.68 104.14)
-		(end 106.68 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP1_0")
-		(uuid "d382f662-2471-43a6-aa0d-78add60411b5")
-	)
-	(segment
-		(start 101.6 104.14)
-		(end 101.6 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP1_1")
-		(uuid "babf933d-47e0-48f6-974a-aab9109887a4")
-	)
-	(segment
-		(start 96.52 104.14)
-		(end 96.52 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP1_2")
-		(uuid "419a3f4d-4113-41fb-8441-b032221d9bb5")
-	)
-	(segment
-		(start 91.44 104.14)
-		(end 91.44 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP1_3")
-		(uuid "7facef03-6882-4ee0-942e-f087a22a3fc7")
-	)
-	(segment
-		(start 86.36 104.14)
-		(end 86.36 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP1_4")
-		(uuid "715d43cb-d706-43e7-84bb-4f186d11f524")
-	)
-	(segment
-		(start 81.28 104.14)
-		(end 81.28 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP1_5")
-		(uuid "69a62f83-2c9d-4763-a125-74474cc26dac")
-	)
-	(segment
-		(start 76.2 104.14)
-		(end 76.2 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP1_6")
-		(uuid "5c83b93f-83d5-414b-9345-102c45e9d7f6")
-	)
-	(segment
-		(start 71.12 104.14)
-		(end 71.12 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP1_7")
-		(uuid "97e2e7c8-c994-42f5-ac72-bfb7ea3e4467")
-	)
-	(segment
-		(start 66.04 104.14)
-		(end 66.04 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP2_0")
-		(uuid "cb1b3b00-567a-412c-b71b-78e065b1d39f")
-	)
-	(segment
-		(start 60.96 104.14)
-		(end 60.96 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP2_1")
-		(uuid "3d26814a-20da-4fa0-80d1-9f75cb7c001f")
-	)
-	(segment
-		(start 55.88 104.14)
-		(end 55.88 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP2_2")
-		(uuid "3da34d19-f1de-4f2f-8d86-32042c8e77c5")
-	)
-	(segment
-		(start 50.8 104.14)
-		(end 50.8 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP2_3")
-		(uuid "348c977d-9f5d-4764-9171-dea72b6f2abe")
-	)
-	(segment
-		(start 45.72 104.14)
-		(end 45.72 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP2_4")
-		(uuid "d44047fd-9ad1-4e4a-aaa2-096078c42372")
-	)
-	(segment
-		(start 40.64 104.14)
-		(end 40.64 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP2_5")
-		(uuid "6fa2514a-1ba6-4e1b-8f59-5e0f9ecf6d9c")
-	)
-	(segment
-		(start 35.56 104.14)
-		(end 35.56 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP2_6")
-		(uuid "9d97d9e0-86be-49ed-86ef-2c37b734caeb")
-	)
-	(segment
-		(start 30.48 104.14)
-		(end 30.48 180.34)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP2_7")
-		(uuid "0fa6421d-a217-4895-a24d-d28cd7c41d35")
-	)
-	(segment
-		(start 269.24 236.22)
-		(end 269.24 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP3_0")
-		(uuid "5ddd53f1-1f3d-46ff-b3d1-caff07555887")
-	)
-	(segment
-		(start 264.16 236.22)
-		(end 264.16 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP3_1")
-		(uuid "4f41b77e-ce79-432c-8941-2ddcaca69db3")
-	)
-	(segment
-		(start 259.08 236.22)
-		(end 259.08 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP3_2")
-		(uuid "5736709e-3ab7-4cd2-b06e-2493f2487b1d")
-	)
-	(segment
-		(start 254 236.22)
-		(end 254 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP3_3")
-		(uuid "5be01ab5-d5ca-47c8-ae5e-a617c963e7a1")
-	)
-	(segment
-		(start 248.92 236.22)
-		(end 248.92 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP3_4")
-		(uuid "b7263579-e359-4d45-b883-229ba7f7c154")
-	)
-	(segment
-		(start 243.84 236.22)
-		(end 243.84 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP3_5")
-		(uuid "5a6bc2fb-9580-40b0-a614-c84679cbddb2")
-	)
-	(segment
-		(start 238.76 236.22)
-		(end 238.76 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP3_6")
-		(uuid "fd613c13-3cfc-4cab-95c5-b77c50dd3c23")
-	)
-	(segment
-		(start 233.68 236.22)
-		(end 233.68 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP3_7")
-		(uuid "fac2c788-5c44-405e-9e90-0d98160f85b1")
-	)
-	(segment
-		(start 228.6 236.22)
-		(end 228.6 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP4_0")
-		(uuid "f5764b97-d6f2-44ea-aa62-91f55a99209e")
-	)
-	(segment
-		(start 223.52 236.22)
-		(end 223.52 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP4_1")
-		(uuid "9f207a0d-d506-4845-8f29-cad147ae6ac8")
-	)
-	(segment
-		(start 218.44 236.22)
-		(end 218.44 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP4_2")
-		(uuid "59ca83e5-86a1-446d-9c74-93e6741afda7")
-	)
-	(segment
-		(start 213.36 236.22)
-		(end 213.36 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP4_3")
-		(uuid "b260ab83-f7f0-4fc3-b8ef-47e68e090ff7")
-	)
-	(segment
-		(start 208.28 236.22)
-		(end 208.28 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP4_4")
-		(uuid "1ea8182c-9e46-4770-afbe-98108856cae3")
-	)
-	(segment
-		(start 203.2 236.22)
-		(end 203.2 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP4_5")
-		(uuid "0be0d54f-2830-4569-b3ee-1a87cf549c04")
-	)
-	(segment
-		(start 198.12 236.22)
-		(end 198.12 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP4_6")
-		(uuid "07806237-e86b-463f-904b-57d10f7a83a9")
-	)
-	(segment
-		(start 193.04 236.22)
-		(end 193.04 312.42)
-		(width 0.2)
-		(layer "B.Cu")
-		(net "/Sector2/MP4_7")
-		(uuid "3e41af8c-5f92-49e2-8dbf-fcbe6b1db231")
+		(net "/Sector3/MP1_4")
+		(uuid "e78e9467-65fc-47cd-8f68-8ab94228b084")
 	)
 	(segment
 		(start 187.96 236.22)
@@ -302779,36 +302845,124 @@
 		(uuid "f53e5609-669d-447c-b93c-c6e563dc92bc")
 	)
 	(segment
-		(start 167.64 236.22)
-		(end 167.64 312.42)
+		(start 111.76 104.14)
+		(end 111.76 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP1_4")
-		(uuid "e78e9467-65fc-47cd-8f68-8ab94228b084")
+		(net "/Sector1/MP4_7")
+		(uuid "1e1e48ef-0d3d-44f3-878e-5be1446a12e7")
 	)
 	(segment
-		(start 162.56 236.22)
-		(end 162.56 312.42)
+		(start 116.84 104.14)
+		(end 116.84 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP1_5")
-		(uuid "ae77bcf6-b720-4b5f-9ae7-78849c334203")
+		(net "/Sector1/MP4_6")
+		(uuid "d3bc4567-cc5c-40dd-bce0-f12171d43777")
 	)
 	(segment
-		(start 157.48 236.22)
-		(end 157.48 312.42)
+		(start 121.92 104.14)
+		(end 121.92 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP1_6")
-		(uuid "2dcd737d-94cc-44ad-8c2c-3104b58228fb")
+		(net "/Sector1/MP4_5")
+		(uuid "c5fb05ac-6cb6-4962-9e5d-0b7beeed5841")
 	)
 	(segment
-		(start 152.4 236.22)
-		(end 152.4 312.42)
+		(start 127 104.14)
+		(end 127 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP1_7")
-		(uuid "d83c512b-0db1-40aa-a124-bb45e3ce0c4d")
+		(net "/Sector1/MP4_4")
+		(uuid "ebea7a87-c1b6-4142-8977-d1c13f18c433")
+	)
+	(segment
+		(start 147.32 104.14)
+		(end 147.32 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP4_0")
+		(uuid "1eab12f6-d773-4b4e-9fd6-6caf7839ea23")
+	)
+	(segment
+		(start -63.75 36.785)
+		(end -63.05 37.485)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Sector1/CLK")
+		(uuid "2ff140b9-369d-4c67-9947-9a95432b2b50")
+	)
+	(segment
+		(start -63.05 40.19)
+		(end -63.5 40.64)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Sector1/CLK")
+		(uuid "cc1d79d4-1226-42f3-b3c7-993ebacc805d")
+	)
+	(segment
+		(start -63.05 37.485)
+		(end -63.05 40.19)
+		(width 0.2)
+		(layer "F.Cu")
+		(net "/Sector1/CLK")
+		(uuid "f4f81090-48d8-4f1c-96a0-cedbf3dcc45f")
+	)
+	(segment
+		(start 142.24 104.14)
+		(end 142.24 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP4_1")
+		(uuid "018e4e69-229b-4529-a939-5a029f414702")
+	)
+	(segment
+		(start 137.16 104.14)
+		(end 137.16 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP4_2")
+		(uuid "91024684-713c-4b76-b066-68175af17b30")
+	)
+	(segment
+		(start 132.08 104.14)
+		(end 132.08 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP4_3")
+		(uuid "d1512d3b-e4ae-40d8-87f1-b24522af5e9d")
+	)
+	(segment
+		(start 111.76 236.22)
+		(end 111.76 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector3/MP2_7")
+		(uuid "b1259eea-7e2c-40b5-9f22-66bac9b9e1e8")
+	)
+	(segment
+		(start 116.84 236.22)
+		(end 116.84 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector3/MP2_6")
+		(uuid "b0e7fa42-4152-4924-9abf-00ee1ae4ad0b")
+	)
+	(segment
+		(start 121.92 236.22)
+		(end 121.92 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector3/MP2_5")
+		(uuid "50438caa-f563-4387-a0a0-21ecebc29347")
+	)
+	(segment
+		(start 127 236.22)
+		(end 127 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector3/MP2_4")
+		(uuid "af520aed-8442-4807-b39d-88901685ff52")
 	)
 	(segment
 		(start 147.32 236.22)
@@ -302843,36 +302997,164 @@
 		(uuid "5e781a06-a266-4097-8941-5726f436e532")
 	)
 	(segment
-		(start 127 236.22)
-		(end 127 312.42)
+		(start 152.4 104.14)
+		(end 152.4 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP2_4")
-		(uuid "af520aed-8442-4807-b39d-88901685ff52")
+		(net "/Sector1/MP3_7")
+		(uuid "94e75ca9-4293-49ae-9972-959c9f1f932c")
 	)
 	(segment
-		(start 121.92 236.22)
-		(end 121.92 312.42)
+		(start 157.48 104.14)
+		(end 157.48 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP2_5")
-		(uuid "50438caa-f563-4387-a0a0-21ecebc29347")
+		(net "/Sector1/MP3_6")
+		(uuid "2484e6e0-2770-4750-8dbf-c527ba2bee9d")
 	)
 	(segment
-		(start 116.84 236.22)
-		(end 116.84 312.42)
+		(start 162.56 104.14)
+		(end 162.56 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP2_6")
-		(uuid "b0e7fa42-4152-4924-9abf-00ee1ae4ad0b")
+		(net "/Sector1/MP3_5")
+		(uuid "290a623c-bc0c-4073-b367-f5d68ce1970b")
 	)
 	(segment
-		(start 111.76 236.22)
-		(end 111.76 312.42)
+		(start 167.64 104.14)
+		(end 167.64 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP2_7")
-		(uuid "b1259eea-7e2c-40b5-9f22-66bac9b9e1e8")
+		(net "/Sector1/MP3_4")
+		(uuid "20adea11-da55-40e7-9e3f-0d63dfdac8c7")
+	)
+	(segment
+		(start 187.96 104.14)
+		(end 187.96 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP3_0")
+		(uuid "8eaf6064-d4d4-4dd0-b4b0-b172b48d8e40")
+	)
+	(segment
+		(start 182.88 104.14)
+		(end 182.88 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP3_1")
+		(uuid "1689d7f9-b39b-4339-9d7f-297bab012faf")
+	)
+	(segment
+		(start 177.8 104.14)
+		(end 177.8 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP3_2")
+		(uuid "dafb43ab-0028-4b49-b3b3-949fe9bf2efa")
+	)
+	(segment
+		(start 172.72 104.14)
+		(end 172.72 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP3_3")
+		(uuid "e041d700-db1a-4432-b2b6-a952f48c790e")
+	)
+	(segment
+		(start 193.04 104.14)
+		(end 193.04 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP2_7")
+		(uuid "68572dc1-3025-4f66-ade9-755258445fbf")
+	)
+	(segment
+		(start 198.12 104.14)
+		(end 198.12 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP2_6")
+		(uuid "221b6ad0-62ab-4476-8536-7b76cd6cfee0")
+	)
+	(segment
+		(start 203.2 104.14)
+		(end 203.2 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP2_5")
+		(uuid "d7b086ae-ac51-4838-af3b-0e7955b7460f")
+	)
+	(segment
+		(start 208.28 104.14)
+		(end 208.28 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP2_4")
+		(uuid "a3527341-d4ef-47e7-9341-5afc59ed4481")
+	)
+	(segment
+		(start 228.6 104.14)
+		(end 228.6 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP2_0")
+		(uuid "cee62e88-2451-475d-bb81-858815540042")
+	)
+	(segment
+		(start 223.52 104.14)
+		(end 223.52 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP2_1")
+		(uuid "b60c293a-a314-48f7-aa6b-36459c981acb")
+	)
+	(segment
+		(start 218.44 104.14)
+		(end 218.44 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP2_2")
+		(uuid "79c7e1e9-4f3d-40d7-a22d-00634b2929f3")
+	)
+	(segment
+		(start 213.36 104.14)
+		(end 213.36 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP2_3")
+		(uuid "a624c173-909b-40a3-b6a2-5caa00a4c85c")
+	)
+	(segment
+		(start 71.12 236.22)
+		(end 71.12 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector3/MP3_7")
+		(uuid "c1218e81-e4f9-4be4-9fbd-616fe004ce09")
+	)
+	(segment
+		(start 76.2 236.22)
+		(end 76.2 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector3/MP3_6")
+		(uuid "83f5efd2-d854-4a75-9636-4f820fa3971c")
+	)
+	(segment
+		(start 81.28 236.22)
+		(end 81.28 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector3/MP3_5")
+		(uuid "56457ee1-0344-45a6-bfea-2d8d305c577d")
+	)
+	(segment
+		(start 86.36 236.22)
+		(end 86.36 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector3/MP3_4")
+		(uuid "9e5766b2-eebb-4f27-b638-7f80873bc5b2")
 	)
 	(segment
 		(start 106.68 236.22)
@@ -302907,36 +303189,228 @@
 		(uuid "1237f9e9-e632-401a-8b5f-6a7f4afad4b1")
 	)
 	(segment
-		(start 86.36 236.22)
-		(end 86.36 312.42)
+		(start 71.12 104.14)
+		(end 71.12 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP3_4")
-		(uuid "9e5766b2-eebb-4f27-b638-7f80873bc5b2")
+		(net "/Sector2/MP1_7")
+		(uuid "97e2e7c8-c994-42f5-ac72-bfb7ea3e4467")
 	)
 	(segment
-		(start 81.28 236.22)
-		(end 81.28 312.42)
+		(start 76.2 104.14)
+		(end 76.2 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP3_5")
-		(uuid "56457ee1-0344-45a6-bfea-2d8d305c577d")
+		(net "/Sector2/MP1_6")
+		(uuid "5c83b93f-83d5-414b-9345-102c45e9d7f6")
 	)
 	(segment
-		(start 76.2 236.22)
-		(end 76.2 312.42)
+		(start 81.28 104.14)
+		(end 81.28 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP3_6")
-		(uuid "83f5efd2-d854-4a75-9636-4f820fa3971c")
+		(net "/Sector2/MP1_5")
+		(uuid "69a62f83-2c9d-4763-a125-74474cc26dac")
 	)
 	(segment
-		(start 71.12 236.22)
-		(end 71.12 312.42)
+		(start 86.36 104.14)
+		(end 86.36 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP3_7")
-		(uuid "c1218e81-e4f9-4be4-9fbd-616fe004ce09")
+		(net "/Sector2/MP1_4")
+		(uuid "715d43cb-d706-43e7-84bb-4f186d11f524")
+	)
+	(segment
+		(start 106.68 104.14)
+		(end 106.68 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP1_0")
+		(uuid "d382f662-2471-43a6-aa0d-78add60411b5")
+	)
+	(segment
+		(start 101.6 104.14)
+		(end 101.6 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP1_1")
+		(uuid "babf933d-47e0-48f6-974a-aab9109887a4")
+	)
+	(segment
+		(start 96.52 104.14)
+		(end 96.52 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP1_2")
+		(uuid "419a3f4d-4113-41fb-8441-b032221d9bb5")
+	)
+	(segment
+		(start 91.44 104.14)
+		(end 91.44 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP1_3")
+		(uuid "7facef03-6882-4ee0-942e-f087a22a3fc7")
+	)
+	(segment
+		(start 30.48 104.14)
+		(end 30.48 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP2_7")
+		(uuid "0fa6421d-a217-4895-a24d-d28cd7c41d35")
+	)
+	(segment
+		(start 35.56 104.14)
+		(end 35.56 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP2_6")
+		(uuid "9d97d9e0-86be-49ed-86ef-2c37b734caeb")
+	)
+	(segment
+		(start 40.64 104.14)
+		(end 40.64 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP2_5")
+		(uuid "6fa2514a-1ba6-4e1b-8f59-5e0f9ecf6d9c")
+	)
+	(segment
+		(start 45.72 104.14)
+		(end 45.72 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP2_4")
+		(uuid "d44047fd-9ad1-4e4a-aaa2-096078c42372")
+	)
+	(segment
+		(start 66.04 104.14)
+		(end 66.04 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP2_0")
+		(uuid "cb1b3b00-567a-412c-b71b-78e065b1d39f")
+	)
+	(segment
+		(start 60.96 104.14)
+		(end 60.96 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP2_1")
+		(uuid "3d26814a-20da-4fa0-80d1-9f75cb7c001f")
+	)
+	(segment
+		(start 55.88 104.14)
+		(end 55.88 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP2_2")
+		(uuid "3da34d19-f1de-4f2f-8d86-32042c8e77c5")
+	)
+	(segment
+		(start 50.8 104.14)
+		(end 50.8 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP2_3")
+		(uuid "348c977d-9f5d-4764-9171-dea72b6f2abe")
+	)
+	(segment
+		(start 233.68 236.22)
+		(end 233.68 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP3_7")
+		(uuid "fac2c788-5c44-405e-9e90-0d98160f85b1")
+	)
+	(segment
+		(start 238.76 236.22)
+		(end 238.76 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP3_6")
+		(uuid "fd613c13-3cfc-4cab-95c5-b77c50dd3c23")
+	)
+	(segment
+		(start 243.84 236.22)
+		(end 243.84 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP3_5")
+		(uuid "5a6bc2fb-9580-40b0-a614-c84679cbddb2")
+	)
+	(segment
+		(start 248.92 236.22)
+		(end 248.92 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP3_4")
+		(uuid "b7263579-e359-4d45-b883-229ba7f7c154")
+	)
+	(segment
+		(start 269.24 236.22)
+		(end 269.24 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP3_0")
+		(uuid "5ddd53f1-1f3d-46ff-b3d1-caff07555887")
+	)
+	(segment
+		(start 264.16 236.22)
+		(end 264.16 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP3_1")
+		(uuid "4f41b77e-ce79-432c-8941-2ddcaca69db3")
+	)
+	(segment
+		(start 259.08 236.22)
+		(end 259.08 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP3_2")
+		(uuid "5736709e-3ab7-4cd2-b06e-2493f2487b1d")
+	)
+	(segment
+		(start 254 236.22)
+		(end 254 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP3_3")
+		(uuid "5be01ab5-d5ca-47c8-ae5e-a617c963e7a1")
+	)
+	(segment
+		(start 30.48 236.22)
+		(end 30.48 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector3/MP4_7")
+		(uuid "5b40464f-7034-4d31-9afc-0c7bdb3a38d5")
+	)
+	(segment
+		(start 35.56 236.22)
+		(end 35.56 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector3/MP4_6")
+		(uuid "8e6286d0-2cac-45d6-90c6-c17d8c47d54c")
+	)
+	(segment
+		(start 40.64 236.22)
+		(end 40.64 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector3/MP4_5")
+		(uuid "8931071f-c206-4bba-837f-00cc062ef9f9")
+	)
+	(segment
+		(start 45.72 236.22)
+		(end 45.72 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector3/MP4_4")
+		(uuid "81c68413-82a4-4c0e-8d37-aa81c92d746d")
 	)
 	(segment
 		(start 66.04 236.22)
@@ -302971,36 +303445,132 @@
 		(uuid "a709a02d-659a-4fd6-81c6-5c1e149c9440")
 	)
 	(segment
-		(start 45.72 236.22)
-		(end 45.72 312.42)
+		(start 233.68 104.14)
+		(end 233.68 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP4_4")
-		(uuid "81c68413-82a4-4c0e-8d37-aa81c92d746d")
+		(net "/Sector1/MP1_7")
+		(uuid "ffdd230b-abcd-46b3-9c21-127de2d285ca")
 	)
 	(segment
-		(start 40.64 236.22)
-		(end 40.64 312.42)
+		(start 238.76 104.14)
+		(end 238.76 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP4_5")
-		(uuid "8931071f-c206-4bba-837f-00cc062ef9f9")
+		(net "/Sector1/MP1_6")
+		(uuid "79fa90f8-8af3-48a4-9b87-d7cc80d618f2")
 	)
 	(segment
-		(start 35.56 236.22)
-		(end 35.56 312.42)
+		(start 243.84 104.14)
+		(end 243.84 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP4_6")
-		(uuid "8e6286d0-2cac-45d6-90c6-c17d8c47d54c")
+		(net "/Sector1/MP1_5")
+		(uuid "8ad80eb3-acf8-4d70-b272-1917764be69a")
 	)
 	(segment
-		(start 30.48 236.22)
-		(end 30.48 312.42)
+		(start 248.92 104.14)
+		(end 248.92 180.34)
 		(width 0.2)
 		(layer "B.Cu")
-		(net "/Sector3/MP4_7")
-		(uuid "5b40464f-7034-4d31-9afc-0c7bdb3a38d5")
+		(net "/Sector1/MP1_4")
+		(uuid "f16dbaee-9c76-4a5b-9773-46bafc2943e9")
+	)
+	(segment
+		(start 269.24 104.14)
+		(end 269.24 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP1_0")
+		(uuid "6526b094-ca85-413d-b99a-cc2d9f01df8d")
+	)
+	(segment
+		(start 264.16 104.14)
+		(end 264.16 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP1_1")
+		(uuid "9c5d90c7-3099-4ea0-adbb-63eead4f7bb3")
+	)
+	(segment
+		(start 259.08 104.14)
+		(end 259.08 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP1_2")
+		(uuid "c9726fae-d70c-4c88-bf76-f1966bf6ef1c")
+	)
+	(segment
+		(start 254 104.14)
+		(end 254 180.34)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector1/MP1_3")
+		(uuid "1217e44a-83e5-465d-b86f-c08d91df2f28")
+	)
+	(segment
+		(start 193.04 236.22)
+		(end 193.04 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP4_7")
+		(uuid "3e41af8c-5f92-49e2-8dbf-fcbe6b1db231")
+	)
+	(segment
+		(start 198.12 236.22)
+		(end 198.12 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP4_6")
+		(uuid "07806237-e86b-463f-904b-57d10f7a83a9")
+	)
+	(segment
+		(start 203.2 236.22)
+		(end 203.2 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP4_5")
+		(uuid "0be0d54f-2830-4569-b3ee-1a87cf549c04")
+	)
+	(segment
+		(start 208.28 236.22)
+		(end 208.28 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP4_4")
+		(uuid "1ea8182c-9e46-4770-afbe-98108856cae3")
+	)
+	(segment
+		(start 228.6 236.22)
+		(end 228.6 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP4_0")
+		(uuid "f5764b97-d6f2-44ea-aa62-91f55a99209e")
+	)
+	(segment
+		(start 223.52 236.22)
+		(end 223.52 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP4_1")
+		(uuid "9f207a0d-d506-4845-8f29-cad147ae6ac8")
+	)
+	(segment
+		(start 218.44 236.22)
+		(end 218.44 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP4_2")
+		(uuid "59ca83e5-86a1-446d-9c74-93e6741afda7")
+	)
+	(segment
+		(start 213.36 236.22)
+		(end 213.36 312.42)
+		(width 0.2)
+		(layer "B.Cu")
+		(net "/Sector2/MP4_3")
+		(uuid "b260ab83-f7f0-4fc3-b8ef-47e68e090ff7")
 	)
 	(zone
 		(net "/+12_OUT")

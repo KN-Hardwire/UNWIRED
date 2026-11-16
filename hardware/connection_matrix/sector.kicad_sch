@@ -3726,7 +3726,7 @@
 	)
 	(wire
 		(pts
-			(xy 251.46 152.4) (xy 254 152.4)
+			(xy 251.46 152.4) (xy 261.62 152.4)
 		)
 		(stroke
 			(width 0)
@@ -4046,7 +4046,7 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 152.4) (xy 266.7 152.4)
+			(xy 269.24 152.4) (xy 274.32 152.4)
 		)
 		(stroke
 			(width 0)
@@ -4296,7 +4296,7 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 132.08) (xy 266.7 132.08)
+			(xy 269.24 132.08) (xy 274.32 132.08)
 		)
 		(stroke
 			(width 0)
@@ -4716,7 +4716,7 @@
 	)
 	(wire
 		(pts
-			(xy 251.46 132.08) (xy 254 132.08)
+			(xy 251.46 132.08) (xy 261.62 132.08)
 		)
 		(stroke
 			(width 0)
@@ -5474,6 +5474,16 @@
 		)
 		(uuid "7e078b80-755c-4627-bb1f-18dd8379b652")
 	)
+	(label "CLK_BUF"
+		(at 252.73 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "82fabe2f-feba-4e10-875c-a01bfa081d0d")
+	)
 	(label "DAT"
 		(at 129.54 41.91 0)
 		(effects
@@ -5555,7 +5565,7 @@
 		(uuid "9d7147eb-4319-4f74-b47c-b5553b102112")
 	)
 	(label "CLK"
-		(at 266.7 132.08 180)
+		(at 274.32 132.08 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5884,6 +5894,16 @@
 		)
 		(uuid "e3bedc36-9d8f-43f9-b64e-563fd47216c6")
 	)
+	(label "DAT_BUF"
+		(at 252.73 152.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e4f89da9-dee8-4134-a7a5-2817eaeb014c")
+	)
 	(label "MP1_7"
 		(at 29.21 184.15 0)
 		(effects
@@ -6015,7 +6035,7 @@
 		(uuid "fe747c83-7d4e-44f7-8ee3-2864839dcd4c")
 	)
 	(label "DAT"
-		(at 266.7 152.4 180)
+		(at 274.32 152.4 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7096,7 +7116,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 257.81 152.4 90)
+		(at 265.43 152.4 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -7107,7 +7127,7 @@
 		(dnp no)
 		(uuid "1c1e3a97-b491-4541-86eb-15e19e0a7090")
 		(property "Reference" "R34"
-			(at 259.334 150.368 90)
+			(at 266.954 150.368 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7118,7 +7138,7 @@
 			)
 		)
 		(property "Value" "22"
-			(at 259.334 154.686 90)
+			(at 266.954 154.686 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7129,7 +7149,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 257.81 150.622 90)
+			(at 265.43 150.622 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7140,7 +7160,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 257.81 152.4 0)
+			(at 265.43 152.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7151,7 +7171,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 257.81 152.4 0)
+			(at 265.43 152.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12615,7 +12635,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 257.81 132.08 90)
+		(at 265.43 132.08 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -12626,7 +12646,7 @@
 		(dnp no)
 		(uuid "f72ca1b0-e0c6-4559-b485-e0413803180c")
 		(property "Reference" "R33"
-			(at 259.334 129.794 90)
+			(at 266.954 129.794 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12637,7 +12657,7 @@
 			)
 		)
 		(property "Value" "22"
-			(at 259.334 134.366 90)
+			(at 266.954 134.366 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12648,7 +12668,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 257.81 130.302 90)
+			(at 265.43 130.302 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12659,7 +12679,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 257.81 132.08 0)
+			(at 265.43 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12670,7 +12690,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 257.81 132.08 0)
+			(at 265.43 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
