@@ -35,3 +35,8 @@ be undone as the designs mature. Each entry: what, where, when to revert.
   parts, changed footprints) is not parity-checked against the PCB until the
   PCB changes or the label is removed. The PR template checklist is the
   human backstop.
+
+## 5. `invalid_outline` = warning (microcontroller)
+- **File:** `hardware/microcontroller/unwired.kicad_pro` (same severity table)
+- **Why:** placeholder board without an Edge.Cuts outline (came in via PR #23).
+- **Revert when:** the board gets a real outline; set back to `"error"`.
