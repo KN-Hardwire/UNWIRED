@@ -33,11 +33,9 @@ jobs:
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v44
-        with:
-          # per-push granularity on PRs (a schematic-only sync doesn't run DRC);
-          # for dispatch the Categorize step diffs against main instead
-          since_last_remote_commit: ${{ github.event_name == 'pull_request' }}
-        if: github.event_name == 'pull_request'
+        # Full-PR diff: the gate for merging is that the PR as a whole is valid.
+        # Schematic-only intent is expressed via the "schematic-only" label,
+        # not by which files happened to change in the latest push.
 
       - name: Categorize
         id: files
@@ -46,7 +44,8 @@ jobs:
           DISPATCH: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           if [ "$DISPATCH" = "true" ]; then
-            # manual run: validate the whole PR state
+            # manual run: tj-actions diffs only the last commit here, so diff
+            # against main ourselves
             CHANGED=$(git diff --name-only origin/main...HEAD)
           else
             CHANGED="$CHANGED_PR"
@@ -81,7 +80,7 @@ jobs:
           while read -r f; do
             grep -oE '"[^"]+\.kicad_sch"' "$f" 2>/dev/null | tr -d '"' \
               | while read -r ref; do echo "$ref $f"; done >> "$map"
-          done < <(find hardware modules -name '*.kicad_sch')
+          done < <(find hardware modules \( -name .history -prune \) -o \( -name '*.kicad_sch' \))
           resolve() {
             local f="$1"
             local ref; ref=$(grep "^$(basename "$f") " "$map" | awk '{print $2}' | head -1)
