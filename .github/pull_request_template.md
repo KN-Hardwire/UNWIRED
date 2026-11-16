@@ -9,6 +9,8 @@ Closes # (issue number)
 - [ ] Hardware Improvement / New Feature
 - [ ] Documentation Update
 
+**PR type (labels):** Add the `schematic-only` label if this PR only syncs the schematic — the DRC job will be skipped. Without it, DRC runs whenever the PCB changed. `hardware-full` = default, no label needed.
+
 ## Checklist
 
 ### 🛡️ Hardware Guard Requirements
