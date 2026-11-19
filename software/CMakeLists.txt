@@ -48,9 +48,9 @@ endif()
 
 # Compile with warnings
 if(MSVC)
-    target_compile_options(${UNWIRED_TARGET} PRIVATE /W4)
+    set(UNWIRED_WARNING_OPTIONS /W4)
 else()
-    target_compile_options(${UNWIRED_TARGET} PRIVATE
+    set(UNWIRED_WARNING_OPTIONS
 		-Wall
 		-Wextra
 		-Wpedantic
@@ -59,9 +59,18 @@ else()
 	)
 endif()
 
+target_compile_options(${UNWIRED_TARGET} PRIVATE ${UNWIRED_WARNING_OPTIONS})
+
 include(CTest)
 if(BUILD_TESTING)
-    add_executable(unwired-tests tests/placeholder.c)
+    # Tests compile the platform sources under test directly; no entry point,
+    # no SDL.
+    add_executable(unwired-tests
+		tests/pal_matrix_desktop_test.c
+		src/platforms/desktop/desktop_matrix.c
+	)
+    target_include_directories(unwired-tests PRIVATE src)
     target_compile_features(unwired-tests PRIVATE c_std_23)
-    add_test(NAME placeholder COMMAND unwired-tests)
+    target_compile_options(unwired-tests PRIVATE ${UNWIRED_WARNING_OPTIONS})
+    add_test(NAME pal-matrix-desktop COMMAND unwired-tests)
 endif()

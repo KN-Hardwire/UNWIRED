@@ -3,20 +3,15 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
+#include <string.h>
 
 #include "pal/matrix.h"
 #include "pal/status.h"
 
-/* In-memory PalMatrix backend for the desktop simulator.
- *
- * Contract: docs/pal_contracts.md, "Matrix". replace() receives the complete
- * desired connection set, validates it fully before touching committed state,
- * and reports PAL_OK only for a complete replacement. Because the committed
- * set lives in memory, every rejection can honestly claim
- * PAL_MATRIX_STATE_UNCHANGED; completion is established by the in-memory state
- * itself, not by electrical readback.
- *
- * TODO: implementation pass. Every function below is a stub.
+/* In-memory PalMatrix backend: validates a requested connection set and stores
+ * the committed one, switching nothing. Contract: docs/pal_contracts.md,
+ * "Matrix". Port map, capacity and the rules the contract leaves open:
+ * docs/desktop_platform.md.
  */
 
 static PalMatrixResult make_result(PalStatus status,
@@ -28,88 +23,115 @@ static PalMatrixResult make_result(PalStatus status,
     return result;
 }
 
-/* True when the port number exists in the simulated port map. */
-static bool port_is_mappable(PalPortNumber port) {
-    (void)port;
-    /* TODO: flat map, valid range [0, DESKTOP_MATRIX_PORT_COUNT). */
-    return false;
+/* failure_effect is meaningful only when status != PAL_OK. */
+static PalMatrixResult make_success(void) {
+    PalMatrixResult result = {0};
+    result.status = PAL_OK;
+    return result;
 }
 
-/* Per-connection validity, independent of the rest of the set.
- * TODO: decide whether source == destination is rejected here. */
+static bool port_is_mappable(PalPortNumber port) {
+    return (uint32_t)port < DESKTOP_MATRIX_PORT_COUNT;
+}
+
+/* Per-connection validity, independent of the rest of the set. */
 static bool connection_is_valid(PalMatrixConnection connection) {
-    /* TODO: self-connection rule. */
+    if (connection.source == connection.destination) {
+        return false;
+    }
     return port_is_mappable(connection.source)
         && port_is_mappable(connection.destination);
 }
 
-/* True when two records describe the same route.
- * TODO: decide whether (a, b) and (b, a) count as the same pair. */
+/* True when two records describe the same route, in either order. */
 static bool connections_are_equal(PalMatrixConnection first,
                                   PalMatrixConnection second) {
-    (void)first;
-    (void)second;
-    return false;
+    if (first.source == second.source
+        && first.destination == second.destination) {
+        return true;
+    }
+    return first.source == second.destination
+        && first.destination == second.source;
 }
 
 static bool set_has_duplicates(const PalMatrixConnection *connections,
                                uint32_t count) {
-    (void)connections;
-    (void)count;
-    /* TODO: pairwise scan over connections_are_equal(). */
-    (void)connections_are_equal;
+    for (uint32_t index = 1u; index < count; index++) {
+        for (uint32_t other = 0u; other < index; other++) {
+            if (connections_are_equal(connections[index], connections[other])) {
+                return true;
+            }
+        }
+    }
     return false;
 }
 
-/* Full argument and capability validation, performed before any state change.
- * Returns PAL_OK when the set may be committed as-is. */
+/* Full validation before any state change. Capacity is checked ahead of the
+ * per-record scan so an unchecked count never walks the caller's array. */
 static PalMatrixResult validate_request(const DesktopMatrix *matrix,
                                         const PalMatrixConnection *connections,
                                         uint32_t count) {
-    (void)matrix;
-    (void)connections;
-    (void)count;
-    (void)connection_is_valid;
-    (void)set_has_duplicates;
-    /* TODO, in order:
-     *   - matrix NULL or not initialized
-     *   - count == 0 accepts connections == NULL
-     *   - count > 0 requires connections != NULL
-     *   - count * sizeof(PalMatrixConnection) fits before any size_t use
-     *   - count > DESKTOP_MATRIX_MAX_CONNECTIONS -> PAL_UNSUPPORTED
-     *   - every record valid, no duplicates -> PAL_INVALID_ARGUMENT
-     * All rejections report PAL_MATRIX_STATE_UNCHANGED.
-     */
-    return make_result(PAL_UNSUPPORTED, PAL_MATRIX_STATE_UNCHANGED);
+    if (matrix == NULL) {
+        return make_result(PAL_INVALID_ARGUMENT, PAL_MATRIX_STATE_UNCHANGED);
+    }
+    if (!matrix->initialized) {
+        return make_result(PAL_INVALID_STATE, PAL_MATRIX_STATE_UNCHANGED);
+    }
+    if (count == 0u) {
+        /* An empty set permits a null array and disconnects everything. */
+        return make_success();
+    }
+    if (connections == NULL) {
+        return make_result(PAL_INVALID_ARGUMENT, PAL_MATRIX_STATE_UNCHANGED);
+    }
+    if (count > DESKTOP_MATRIX_MAX_CONNECTIONS) {
+        return make_result(PAL_UNSUPPORTED, PAL_MATRIX_STATE_UNCHANGED);
+    }
+    for (uint32_t index = 0u; index < count; index++) {
+        if (!connection_is_valid(connections[index])) {
+            return make_result(PAL_INVALID_ARGUMENT,
+                               PAL_MATRIX_STATE_UNCHANGED);
+        }
+    }
+    if (set_has_duplicates(connections, count)) {
+        return make_result(PAL_INVALID_ARGUMENT, PAL_MATRIX_STATE_UNCHANGED);
+    }
+    return make_success();
 }
 
-/* Replace committed routing with an already validated set. Copies the borrowed
- * array; routes absent from it are removed. */
+/* Copies the borrowed array; routes absent from it are removed. count is
+ * bounded by capacity here, so the size calculation cannot overflow. */
 static void commit_request(DesktopMatrix *matrix,
                            const PalMatrixConnection *connections,
                            uint32_t count) {
-    (void)matrix;
-    (void)connections;
-    (void)count;
-    /* TODO: copy count records, store connection_count. */
+    if (count > 0u) {
+        memcpy(matrix->connections,
+               connections,
+               (size_t)count * sizeof(PalMatrixConnection));
+    }
+    matrix->connection_count = count;
 }
 
 static PalMatrixResult desktop_matrix_replace(void *context,
                                               const PalMatrixConnection *connections,
                                               uint32_t count) {
-    (void)context;
-    (void)connections;
-    (void)count;
-    (void)validate_request;
-    (void)commit_request;
-    /* TODO: cast context to DesktopMatrix *, validate_request(), then
-     * commit_request() and return PAL_OK on success. */
-    return make_result(PAL_UNSUPPORTED, PAL_MATRIX_STATE_UNCHANGED);
+    DesktopMatrix *matrix = context;
+
+    PalMatrixResult result = validate_request(matrix, connections, count);
+    if (result.status != PAL_OK) {
+        return result;
+    }
+
+    commit_request(matrix, connections, count);
+    return make_success();
 }
 
 void desktop_matrix_init(DesktopMatrix *matrix) {
-    (void)matrix;
-    /* TODO: empty routing, initialized = true. */
+    if (matrix == NULL) {
+        return;
+    }
+    matrix->connection_count = 0u;
+    matrix->initialized = true;
 }
 
 PalMatrix desktop_matrix_interface(DesktopMatrix *matrix) {
@@ -121,20 +143,34 @@ PalMatrix desktop_matrix_interface(DesktopMatrix *matrix) {
 }
 
 uint32_t desktop_matrix_connection_count(const DesktopMatrix *matrix) {
-    (void)matrix;
-    return 0;
+    if (matrix == NULL) {
+        return 0u;
+    }
+    return matrix->connection_count;
 }
 
 const PalMatrixConnection *desktop_matrix_connections(const DesktopMatrix *matrix) {
-    (void)matrix;
-    return NULL;
+    if (matrix == NULL) {
+        return NULL;
+    }
+    return matrix->connections;
 }
 
 bool desktop_matrix_is_connected(const DesktopMatrix *matrix,
                                  PalPortNumber source,
                                  PalPortNumber destination) {
-    (void)matrix;
-    (void)source;
-    (void)destination;
+    if (matrix == NULL) {
+        return false;
+    }
+
+    PalMatrixConnection wanted = {
+        .source = source,
+        .destination = destination,
+    };
+    for (uint32_t index = 0u; index < matrix->connection_count; index++) {
+        if (connections_are_equal(matrix->connections[index], wanted)) {
+            return true;
+        }
+    }
     return false;
 }
