@@ -11,6 +11,11 @@ set(UNWIRED_MAIN "${CMAKE_CURRENT_SOURCE_DIR}/src/platforms/${UNWIRED_PLATFORM}/
 if(UNWIRED_PLATFORM STREQUAL "desktop")
     set(UNWIRED_TARGET unwired-desktop)
 
+    # PAL implementations for this platform, excluding the entry point.
+    set(UNWIRED_PLATFORM_SOURCES
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/platforms/desktop/desktop_matrix.c"
+    )
+
     if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/third_party/SDL/CMakeLists.txt")
         message(FATAL_ERROR
             "SDL3 submodule is missing. From the repository root, run: "
@@ -28,6 +33,7 @@ endif()
 
 add_executable(${UNWIRED_TARGET}
 	${UNWIRED_MAIN}
+	${UNWIRED_PLATFORM_SOURCES}
 )
 
 target_include_directories(${UNWIRED_TARGET} PRIVATE
