@@ -8,6 +8,14 @@
 
 CTest is included with CMake and runs the tests.
 
+SDL for desktop platform is pinned at version 3.4.20 as a Git submodule
+at `third_party/SDL`. Before building the desktop simulator initialize
+the submodule:
+
+```sh
+git submodule update --init --recursive software/third_party/SDL
+```
+
 ## Building
 
 From the `software` directory:

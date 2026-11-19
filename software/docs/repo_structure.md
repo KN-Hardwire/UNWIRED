@@ -67,3 +67,8 @@ allowing the same shared application code to be used by both targets.
 
 Tests live in the top-level `tests/` directory, alongside `src/`. They run on
 the desktop host through CTest.
+
+## `third_party/`
+
+External source dependencies. `third_party/SDL/` is the SDL3 Git submodule,
+pinned to a specific upstream commit. CMake builds it for the desktop target.
