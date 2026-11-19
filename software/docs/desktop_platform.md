@@ -57,9 +57,20 @@ implementation in tests.
 
 | Case | Decision | Reason |
 | --- | --- | --- |
-| `(a, b)` and `(b, a)` in one set | Duplicate, `PAL_INVALID_ARGUMENT` | An analog crosspoint closure is bidirectional, so both records name the same route |
+| `(a, b)` and `(b, a)` in one set | Duplicate, `PAL_INVALID_ARGUMENT` | A crosspoint closure is bidirectional, so both records name the same route |
 | `source == destination` | `PAL_INVALID_ARGUMENT` | A port has no crosspoint to itself, so the endpoint pair is unmappable |
 | A port used by several connections | Accepted | A crosspoint supports fan-out; see the known simplification below |
+
+Rejecting the reversed pair cannot reject a request App is able to make.
+[Core Model](core_model.md) defines a connection as an output source and an
+input destination, and a port holds one configured direction, so `(a, b)` and
+`(b, a)` can never both pass Core validation. The rule therefore guards against
+a malformed request, not against legitimate routing.
+
+`desktop_matrix_is_connected()` matches that same unordered pair, so it reports
+a committed route in either argument order. It describes the simulated closure,
+not the domain's direction; Core and UI remain the source of truth for which
+endpoint is the source.
 
 ### Validation Order
 
@@ -72,12 +83,17 @@ implementation in tests.
 7. Duplicate pairs: `PAL_INVALID_ARGUMENT`.
 
 Capacity is checked before the per-record scan, ahead of the order the contract
-suggests for an otherwise valid set. `count` is a `uint32_t` supplied by the
-caller, so scanning first would walk the caller's array according to an
-unchecked length. A consequence is that an oversized set containing an invalid
-record reports `PAL_UNSUPPORTED` rather than `PAL_INVALID_ARGUMENT`. The same
-check makes the later `count * sizeof(PalMatrixConnection)` calculation
-provably free of overflow, because `count` is bounded by capacity by then.
+suggests for an otherwise valid set. A consequence is that an oversized set
+containing an invalid record reports `PAL_UNSUPPORTED` rather than
+`PAL_INVALID_ARGUMENT`.
+
+This ordering is defensive, not a contract requirement. The contract already
+obliges the caller to pass a valid array for a nonempty set, so a `count` that
+overstates the array is a caller defect. Checking capacity first means such a
+defect is rejected instead of walking the array according to an unchecked
+length. The same check makes the later `count * sizeof(PalMatrixConnection)`
+calculation provably free of overflow, because `count` is bounded by capacity
+by then.
 
 ### Known Simplifications
 
