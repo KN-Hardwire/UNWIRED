@@ -38,6 +38,10 @@ user input, switching matrix, and persistent storage, without depending
 on any specific implementation. Defines normalized input event types and
 operation results without depending on App, Core or UI.
 
+`pal.h` collects injected service tables; `input.h`, `display.h`, `matrix.h` and
+`storage.h` define individual services, and `status.h` defines common results.
+Behavior and buffer ownership are specified in [PAL Contracts](pal_contracts.md).
+
 ## `src/platforms/`
 
 Platform-specific implementations of the PAL interfaces and application
