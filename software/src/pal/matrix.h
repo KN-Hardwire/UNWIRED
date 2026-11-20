@@ -2,7 +2,6 @@
 #define UNWIRED_PAL_MATRIX_H
 
 #include "status.h"
-#include <stdint.h>
 
 /* Device-wide physical port number; not a Core type or matrix chip address. */
 typedef uint16_t PalPortNumber;
@@ -12,7 +11,7 @@ typedef struct {
     PalPortNumber destination;
 } PalMatrixConnection;
 
-typedef enum {
+typedef enum : uint8_t {
     PAL_MATRIX_STATE_UNKNOWN = 0,
     PAL_MATRIX_STATE_UNCHANGED,
 } PalMatrixFailureEffect;
@@ -24,7 +23,7 @@ typedef struct {
 } PalMatrixResult;
 
 typedef struct {
-    void *context;
+    void* context;
     /* Replace the complete routing set synchronously. PAL_OK confirms the full
      * requested set, including removal of routes absent from this array.
      * count == 0 disconnects everything and permits connections == NULL.
@@ -33,9 +32,7 @@ typedef struct {
      * Implementations prevalidate known hardware limits before changing routes.
      * The array is borrowed until return; physical addressing stays in platform.
      */
-    PalMatrixResult (*replace)(void *context,
-                               const PalMatrixConnection *connections,
-                               uint32_t count);
+    PalMatrixResult (*replace)(void* context, const PalMatrixConnection* connections, uint32_t count);
 } PalMatrix;
 
 #endif

@@ -2,6 +2,6 @@
 #include <stdlib.h>
 
 int main(void) {
-	printf("UNWIRED: running main\n");
+	(void) printf("UNWIRED: running main\n");
 	return EXIT_SUCCESS;
 }
