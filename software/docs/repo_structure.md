@@ -52,7 +52,9 @@ and rendering.
 - `desktop/` - Runs the desktop simulator using desktop graphics, input,
   file storage, and simulated hardware.
 - `stm32/` - (not implemented) Runs the firmware on the microcontroller
-  using physical peripherals and hardware drivers.
+  using physical peripherals and hardware drivers. `stm32/stm32_pinout.h`
+  holds the microcontroller pin assignments taken from the schematics in
+  `hardware/microcontroller/`.
 
 The desktop platform places each implemented PAL service in its own translation
 unit, named after the service and prefixed with the platform, as in
