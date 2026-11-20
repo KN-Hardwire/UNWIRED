@@ -54,6 +54,11 @@ and rendering.
 - `stm32/` - (not implemented) Runs the firmware on the microcontroller
   using physical peripherals and hardware drivers.
 
+The desktop platform places each implemented PAL service in its own translation
+unit, named after the service and prefixed with the platform, as in
+`desktop/desktop_matrix.c`. Decisions the contracts leave to that
+implementation are recorded in [Desktop Platform](desktop_platform.md).
+
 ### Dependency Rule
 
 `app/`, `core/`, `ui/` and `pal/` must not depend on `platforms/`. App depends
