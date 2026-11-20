@@ -12,10 +12,10 @@
  * Calls are serialized on the application thread and never reenter App/UI.
  */
 typedef struct {
-    PalInput input;
     PalDisplay display;
+    PalInput input;
     PalMatrix matrix;
-    const PalStorage *storage;
+    const PalStorage* storage;
 } Pal;
 
 #endif

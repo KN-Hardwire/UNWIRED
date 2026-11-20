@@ -1,12 +1,12 @@
 #ifndef UNWIRED_CORE_PRESET_H
 #define UNWIRED_CORE_PRESET_H
 
-#include "limits.h"
+#include "core_limits.h"
 #include "routing.h"
 
 typedef struct {
-    char name[CORE_NAME_CAPACITY];
     CoreRouting routing;
+    char name[CORE_NAME_CAPACITY];
 } CorePreset;
 
 #endif

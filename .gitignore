@@ -43,3 +43,4 @@ obj/
 # Editor artifacts
 .history/
 .cache/
+.vscode/
