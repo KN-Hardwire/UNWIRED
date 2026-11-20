@@ -1,7 +1,9 @@
 #ifndef UNWIRED_PAL_STATUS_H
 #define UNWIRED_PAL_STATUS_H
 
-typedef enum {
+#include <stdint.h>
+
+typedef enum : uint8_t {
     PAL_OK = 0,
     PAL_NO_EVENT,
     PAL_INVALID_ARGUMENT,

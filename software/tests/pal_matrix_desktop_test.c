@@ -1,7 +1,6 @@
-#include <stdbool.h>
-#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 #include "platforms/desktop/desktop_matrix.h"
 
@@ -10,10 +9,10 @@
 
 static unsigned failures = 0u;
 
-static void check(const char *name, bool ok) {
-    printf("%-54s %s\n", name, ok ? "pass" : "FAIL");
+static void check(const char* name, bool ok) {
+    (void) printf("%-54s %s\n", name, ok ? "pass" : "FAIL");
     if (!ok) {
-        failures++;
+        ++failures;
     }
 }
 
@@ -23,16 +22,16 @@ static const PalMatrixConnection baseline[] = {
     {3u, 4u},
     {5u, 63u},
 };
+
 static const uint32_t baseline_count = 3u;
 
-static void commit_baseline(PalMatrix pal, DesktopMatrix *matrix) {
+static void commit_baseline(PalMatrix pal, DesktopMatrix* matrix) {
     PalMatrixResult result = pal.replace(pal.context, baseline, baseline_count);
-    check("baseline committed",
-          result.status == PAL_OK
-              && desktop_matrix_connection_count(matrix) == baseline_count);
+    check("baseline committed", result.status == PAL_OK && desktop_matrix_connection_count(matrix) == baseline_count);
+    return;
 }
 
-static bool baseline_preserved(const DesktopMatrix *matrix) {
+static bool baseline_preserved(const DesktopMatrix* matrix) {
     return desktop_matrix_connection_count(matrix) == baseline_count
         && desktop_matrix_is_connected(matrix, 1u, 2u)
         && desktop_matrix_is_connected(matrix, 3u, 4u)
@@ -49,28 +48,31 @@ static void test_context(PalMatrix pal) {
     };
     PalMatrix raw = desktop_matrix_interface(&uninitialized);
     check("uninitialized context -> INVALID_STATE",
-          raw.replace(raw.context, NULL, 0u).status == PAL_INVALID_STATE);
+          raw.replace(raw.context, nullptr, 0u).status == PAL_INVALID_STATE);
+    
+    return;
 }
 
-static void test_empty_set(PalMatrix pal, DesktopMatrix *matrix) {
-    PalMatrixResult result = pal.replace(pal.context, NULL, 0u);
+static void test_empty_set(PalMatrix pal, DesktopMatrix* matrix) {
+    PalMatrixResult result = pal.replace(pal.context, nullptr, 0u);
     check("empty set with null array -> OK",
           result.status == PAL_OK
               && desktop_matrix_connection_count(matrix) == 0u);
 
     commit_baseline(pal, matrix);
-    result = pal.replace(pal.context, NULL, 0u);
+    result = pal.replace(pal.context, nullptr, 0u);
     check("empty set clears committed routing",
           result.status == PAL_OK
               && desktop_matrix_connection_count(matrix) == 0u
               && !desktop_matrix_is_connected(matrix, 1u, 2u));
+
+    return;
 }
 
-static void test_rejections_preserve_routing(PalMatrix pal,
-                                             DesktopMatrix *matrix) {
+static void test_rejections_preserve_routing(PalMatrix pal, DesktopMatrix* matrix) {
     commit_baseline(pal, matrix);
 
-    PalMatrixResult result = pal.replace(pal.context, NULL, 2u);
+    PalMatrixResult result = pal.replace(pal.context, nullptr, 2u);
     check("null array with count > 0 -> INVALID_ARGUMENT, UNCHANGED",
           result.status == PAL_INVALID_ARGUMENT
               && result.failure_effect == PAL_MATRIX_STATE_UNCHANGED);
@@ -105,25 +107,25 @@ static void test_rejections_preserve_routing(PalMatrix pal,
           result.status == PAL_INVALID_ARGUMENT
               && result.failure_effect == PAL_MATRIX_STATE_UNCHANGED);
     check("  routing preserved", baseline_preserved(matrix));
+
+    return;
 }
 
 /* Distinct unordered pairs; the port map provides far more than capacity. */
-static void fill_unique_pairs(PalMatrixConnection *connections, uint32_t count) {
+static void fill_unique_pairs(PalMatrixConnection* connections, uint32_t count) {
     uint32_t written = 0u;
-    for (uint32_t source = 0u;
-         source < DESKTOP_MATRIX_PORT_COUNT && written < count;
-         source++) {
-        for (uint32_t destination = source + 1u;
-             destination < DESKTOP_MATRIX_PORT_COUNT && written < count;
-             destination++) {
-            connections[written].source = (PalPortNumber)source;
-            connections[written].destination = (PalPortNumber)destination;
-            written++;
+    for (uint32_t source = 0u; source < DESKTOP_MATRIX_PORT_COUNT && written < count; ++source) {
+        for (uint32_t destination = source + 1u; destination < DESKTOP_MATRIX_PORT_COUNT && written < count; ++destination) {
+            connections[written].source = (PalPortNumber) source;
+            connections[written].destination = (PalPortNumber) destination;
+            ++written;
         }
     }
+
+    return;
 }
 
-static void test_capacity(PalMatrix pal, DesktopMatrix *matrix) {
+static void test_capacity(PalMatrix pal, DesktopMatrix* matrix) {
     static PalMatrixConnection oversized[DESKTOP_MATRIX_MAX_CONNECTIONS + 1u];
 
     commit_baseline(pal, matrix);
@@ -149,9 +151,11 @@ static void test_capacity(PalMatrix pal, DesktopMatrix *matrix) {
           result.status == PAL_OK
               && desktop_matrix_connection_count(matrix)
                      == DESKTOP_MATRIX_MAX_CONNECTIONS);
+
+    return;
 }
 
-static void test_replacement(PalMatrix pal, DesktopMatrix *matrix) {
+static void test_replacement(PalMatrix pal, DesktopMatrix* matrix) {
     commit_baseline(pal, matrix);
 
     const PalMatrixConnection replacement[] = {{10u, 11u}};
@@ -173,15 +177,19 @@ static void test_replacement(PalMatrix pal, DesktopMatrix *matrix) {
               && desktop_matrix_is_connected(matrix, 11u, 10u));
     check("an absent route is not reported",
           !desktop_matrix_is_connected(matrix, 10u, 12u));
+    
+    return;
 }
 
 static void test_accessors_reject_null(void) {
     check("connection_count(NULL) == 0",
-          desktop_matrix_connection_count(NULL) == 0u);
+          desktop_matrix_connection_count(nullptr) == 0u);
     check("connections(NULL) == NULL",
-          desktop_matrix_connections(NULL) == NULL);
+          desktop_matrix_connections(nullptr) == nullptr);
     check("is_connected(NULL, ...) == false",
-          !desktop_matrix_is_connected(NULL, 1u, 2u));
+          !desktop_matrix_is_connected(nullptr, 1u, 2u));
+    
+    return;
 }
 
 int main(void) {
@@ -192,7 +200,7 @@ int main(void) {
     check("init leaves routing empty",
           desktop_matrix_connection_count(&matrix) == 0u);
     check("interface exposes the matrix as its context",
-          pal.context == &matrix && pal.replace != NULL);
+          pal.context == &matrix && pal.replace != nullptr);
 
     test_context(pal);
     test_empty_set(pal, &matrix);
@@ -202,9 +210,11 @@ int main(void) {
     test_accessors_reject_null();
 
     if (failures > 0u) {
-        printf("\n%u check(s) failed.\n", failures);
+        (void) printf("\n%u check(s) failed.\n", failures);
         return EXIT_FAILURE;
     }
-    puts("\nAll checks passed.");
+
+    (void) puts("\nAll checks passed.");
+    
     return EXIT_SUCCESS;
 }
