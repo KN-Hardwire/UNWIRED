@@ -269,7 +269,7 @@ Each endpoint is a device-wide port number using PAL's own `PalPortNumber`
 type. App explicitly translates Core connections. Platform implementations map
 these numbers to physical or simulated matrix addresses; PAL contains no module
 identifiers and does not include Core headers. Matrix capacity remains an
-implementation capability, while Core storage capacities stay in `limits.h`.
+implementation capability, while Core storage capacities stay in `core_limits.h`.
 
 An otherwise valid connection set that exceeds hardware connection capacity or
 cannot be realized by the hardware topology returns `PAL_UNSUPPORTED`.

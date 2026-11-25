@@ -27,7 +27,7 @@ synchronization is unknown. UI receives that distinction in presentation data.
    supplies stable control identifiers and the mapping of device port numbers
    to physical or simulated matrix addresses.
 2. The platform constructs PAL interfaces and supplies the initial device
-   configuration. Core capacities come from `src/core/limits.h`.
+   configuration. Core capacities come from `src/core/core_limits.h`.
 3. App checks required callbacks and nonzero display dimensions, initializes
    Core with the supplied configuration and empty routing, and initializes UI.
    Any bounded UI rendering scratch storage is provisioned outside the
