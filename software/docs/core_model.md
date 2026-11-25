@@ -67,7 +67,7 @@ occupied prefix of its array and must not exceed its capacity. Names are
 null-terminated and name capacity includes that terminator. The numeric
 `CorePortId` in C represents the device-wide port number defined above.
 
-`src/core/limits.h` is the source of truth for capacities, including port
+`src/core/core_limits.h` is the source of truth for capacities, including port
 capacity. These are current software limits, not physical hardware claims.
 Changing how limits are sourced is deferred. Core and UI operation signatures,
 configuration validation rules and their tests belong to the next development

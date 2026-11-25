@@ -28,7 +28,7 @@ firmware backend.
 PAL treats matrix capacity as an implementation capability, so these constants
 belong to the platform rather than to `src/pal/matrix.h`. The simulator models
 no hardware limits of its own, so it derives both values from
-`src/core/limits.h` instead of duplicating the literals; the platform is the
+`src/core/core_limits.h` instead of duplicating the literals; the platform is the
 layer allowed to read Core capacities, as described in
 [Application Lifecycle](app_lifecycle.md). Deriving them also keeps the
 simulator from rejecting a set that Core is able to express at all.
